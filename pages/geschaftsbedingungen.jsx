@@ -11,9 +11,10 @@ export async function getStaticProps() {
 	// await writeFile('agb.json', JSON.stringify(data));
 	// const agb = await readFile('agb.json');
 
-	const data = await getAGB();
+	const agb = await getAGB();
 
 	return {
-		props: { agb: JSON.parse(agb) },
+		// props: { agb: JSON.parse(agb) },
+		props: { agb },
 	};
 }
