@@ -143,8 +143,13 @@ const ProductCard = ({ product, ...props }) => {
 
 	return (
 		<>
-			<Card {...props}>
-				<Card.Body>
+			<Card
+				style={{
+					minWidth: '270px',
+				}}
+				{...props}
+			>
+				<Card.Body className='p-3'>
 					<div
 						style={{
 							display: 'flex',
@@ -178,7 +183,7 @@ const ProductCard = ({ product, ...props }) => {
 							{product.description && (
 								<Col sm='2' className='p-0'>
 									<div
-										className='align-self-end'
+										className='float-right'
 										role='button'
 										onClick={() => {
 											setDescModalShow(true);
