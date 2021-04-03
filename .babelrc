@@ -1,0 +1,41 @@
+{
+	"presets": [
+		[
+			"next/babel",
+			{
+				"preset-env": {
+					"useBuiltIns": "entry"
+				}
+			}
+		]
+	]
+}
+
+// {
+// 	"presets": [
+// 		[
+// 			"next/babel",
+// 			{
+// 				"preset-env": {
+// 					"useBuiltIns": false,
+// 					"targets": "last 1 version"
+// 				}
+// 			}
+// 		]
+// 	]
+// }
+
+// {
+// 	"presets": [
+// 		[
+// 			"next/babel",
+// 			{
+// 				"preset-env": {
+// 					"useBuiltIns": false,
+// "targets": "last 5 versions, > 2%, not ie 11, not dead, not op_mini all"
+
+// 				}
+// 			}
+// 		]
+// 	]
+// }

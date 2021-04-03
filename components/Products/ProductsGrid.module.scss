@@ -1,0 +1,9 @@
+.p {
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 245px));
+		grid-gap: 15px;
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+}

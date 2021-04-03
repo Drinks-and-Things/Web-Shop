@@ -1,0 +1,139 @@
+.cart__root {
+	position: fixed;
+	visibility: hidden;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	max-width: 100%;
+	background-color: #fff; /* Black*/
+	will-change: transform;
+	z-index: 10;
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+	transition: all 0.75s;
+
+	&::after {
+		background-color: #ffffff;
+		bottom: 0;
+		content: '';
+		left: 0;
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: all 250ms;
+	}
+
+	&.updating {
+		&::after {
+			opacity: 0.9;
+			pointer-events: all;
+		}
+	}
+	// -webkit-transition: transform 0.75s;
+	// -webkit-transition: -webkit-transform 0.75s;
+	// transition: -webkit-transform 0.75s;
+	// -o-transition: transform 0.75s;
+	// transition: transform 0.75s;
+	// transition: transform 0.75s, -webkit-transform 0.75s;
+
+	&.open {
+		visibility: visible;
+		transform: translateX(0);
+		-webkit-transform: translateX(0);
+	}
+
+	&.closed {
+		transform: translateX(100%);
+		-webkit-transform: translateX(100%);
+	}
+
+	@media (min-width: 600px) {
+		width: 400px;
+		max-width: 400px;
+	}
+
+	// ::after {
+	// 	background-color: #fff;
+	// 	bottom: 0;
+	// 	content: '';
+	// 	left: 0;
+	// 	opacity: 0;
+	// 	pointer-events: none;
+	// 	position: absolute;
+	// 	right: 0;
+	// 	top: 0;
+	// 	transition: all 250ms;
+	// }
+}
+
+.heading {
+	display: grid;
+	grid-template-columns: 6fr 1fr;
+	// grid-auto-rows: 60px;
+	vertical-align: middle;
+	position: absolute;
+	-webkit-justify-content: center;
+	justify-content: center;
+	width: 100%;
+	height: auto;
+
+	h2 {
+		position: relative;
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-positive: 1;
+		height: 60px;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-align-items: center;
+		align-items: center;
+		flex-grow: 1;
+		margin: 0;
+	}
+
+	button {
+		display: -webkit-inline-flex;
+		display: inline-flex;
+		-webkit-align-self: unset;
+		align-self: unset;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-align-items: center;
+		align-items: center;
+		justify-self: end;
+
+		position: relative;
+		padding: 0.5rem;
+		width: 50px;
+		height: 50px;
+	}
+}
+
+.content {
+	bottom: 0;
+	overflow-y: auto;
+	padding: 10px;
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	@media (min-width: 600px) {
+		&::-webkit-scrollbar {
+			height: 6px;
+			width: 6px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: rgba(black, 0.5);
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background: black;
+		}
+		&::-webkit-scrollbar-track {
+			background: rgba(black, 0.2);
+		}
+	}
+}

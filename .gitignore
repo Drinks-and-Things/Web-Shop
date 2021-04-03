@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+/public/sw.js*
+/public/workbox-*.js*
+/npm-debug.log
+.DS_Store
+generated
+.env.local
+out
+TS/*
+TS/

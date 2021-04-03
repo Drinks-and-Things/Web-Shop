@@ -1,0 +1,188 @@
+// Copyright (c) 2021 by Zach Saucier (https://codepen.io/ZachSaucier/pen/dIomg)
+// Fork of an original work No Vacancy 404 (https://codepen.io/rileyjshaw/pen/ufEIH)
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+@import 'variables';
+
+.page404 {
+	word-spacing: 3px;
+	background-color: $primary;
+	height: 100vh;
+	padding: 40px 20px;
+	font-size: 75px;
+	font-family: 'Monoton', cursive;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
+	color: red;
+
+	[id~='code'] {
+		&:hover {
+			text-shadow: 0 0 100px red, 0 0 40px FireBrick, 0 0 8px DarkRed;
+		}
+
+		span:nth-of-type(2) {
+			-webkit-animation: lower 10s linear infinite;
+			animation: lower 10s linear infinite;
+		}
+
+		span:nth-of-type(1) {
+			text-shadow: none;
+			opacity: 0.4;
+		}
+	}
+
+	[id~='error'] {
+		color: #fff;
+		text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+
+		&:hover {
+			text-shadow: 0 0 200px #ffffff, 0 0 80px #008000, 0 0 6px #0000ff;
+		}
+
+		span {
+			-webkit-animation: upper 11s linear infinite;
+			animation: upper 11s linear infinite;
+		}
+	}
+
+	.home__link {
+		font-size: 25px;
+		word-spacing: 10px;
+		margin-top: 25px;
+		display: flex;
+		justify-content: center;
+
+		@media screen and (min-width: 700px) {
+			font-size: 35px;
+			word-spacing: 10px;
+		}
+	}
+}
+
+@-webkit-keyframes upper {
+	0%,
+	19.999%,
+	22%,
+	62.999%,
+	64%,
+	64.999%,
+	70%,
+	100% {
+		opacity: 0.99;
+		text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+	}
+	20%,
+	21.999%,
+	63%,
+	63.999%,
+	65%,
+	69.999% {
+		opacity: 0.4;
+		text-shadow: none;
+	}
+}
+@keyframes upper {
+	0%,
+	19.999%,
+	22%,
+	62.999%,
+	64%,
+	64.999%,
+	70%,
+	100% {
+		opacity: 0.99;
+		text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+	}
+	20%,
+	21.999%,
+	63%,
+	63.999%,
+	65%,
+	69.999% {
+		opacity: 0.4;
+		text-shadow: none;
+	}
+}
+@-webkit-keyframes lower {
+	0%,
+	12%,
+	18.999%,
+	23%,
+	31.999%,
+	37%,
+	44.999%,
+	46%,
+	49.999%,
+	51%,
+	58.999%,
+	61%,
+	68.999%,
+	71%,
+	85.999%,
+	96%,
+	100% {
+		opacity: 0.99;
+		text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
+	}
+	19%,
+	22.99%,
+	32%,
+	36.999%,
+	45%,
+	45.999%,
+	50%,
+	50.99%,
+	59%,
+	60.999%,
+	69%,
+	70.999%,
+	86%,
+	95.999% {
+		opacity: 0.4;
+		text-shadow: none;
+	}
+}
+@keyframes lower {
+	0%,
+	12%,
+	18.999%,
+	23%,
+	31.999%,
+	37%,
+	44.999%,
+	46%,
+	49.999%,
+	51%,
+	58.999%,
+	61%,
+	68.999%,
+	71%,
+	85.999%,
+	96%,
+	100% {
+		opacity: 0.99;
+		text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
+	}
+	19%,
+	22.99%,
+	32%,
+	36.999%,
+	45%,
+	45.999%,
+	50%,
+	50.99%,
+	59%,
+	60.999%,
+	69%,
+	70.999%,
+	86%,
+	95.999% {
+		opacity: 0.4;
+		text-shadow: none;
+	}
+}

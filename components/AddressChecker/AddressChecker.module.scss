@@ -1,0 +1,44 @@
+.bg {
+	height: 100vh;
+	width: 100vw;
+	z-index: -1;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.form {
+	width: 100%;
+	z-index: 1;
+}
+
+.landingImage {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	z-index: 0;
+}
+
+// .landingImage {
+// 	display: -webkit-box;
+// 	display: -webkit-flex;
+// 	display: -ms-flexbox;
+// 	display: flex;
+// 	position: fixed;
+// 	height: 100vh;
+// 	width: 100vw;
+// 	min-width: 1500px;
+// 	-webkit-box-align: center;
+// 	-webkit-align-items: center;
+// 	-ms-flex-align: center;
+// 	align-items: center;
+// 	// height: 100vh;
+// 	// width: 1920px;
+// 	overflow: hidden;
+// 	z-index: 0;
+// }
+
+// .button {
+// 	z-index: 1;
+// }

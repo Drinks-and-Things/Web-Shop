@@ -1,0 +1,43 @@
+.navbar {
+	display: grid !important;
+	grid-template-columns: 1fr 3fr 1fr;
+	padding: 0.25rem 0.75rem !important;
+	min-height: 109px;
+
+	button {
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
+		width: fit-content;
+	}
+
+	.cart {
+		display: inline-block;
+		width: auto;
+		line-height: inherit;
+		white-space: nowrap;
+		padding-top: 0.3125rem;
+		padding-bottom: 0.3125rem;
+		margin-right: 1rem;
+	}
+
+	@media screen and (min-width: 1200px) {
+		[id='desktop'] {
+			position: absolute !important;
+			background: black;
+			height: auto;
+			overflow: hidden;
+			max-height: 700px;
+			text-align: left;
+		}
+	}
+}
+
+.header {
+	-webkit-justify-content: center;
+	justify-content: center;
+	text-align: center;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	z-index: 1020;
+}

@@ -1,0 +1,35 @@
+.outer {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.agb {
+	padding: 10px 5px;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+
+	@media screen and (min-width: 650px) {
+		padding: 10px 25px;
+	}
+	max-width: 1120px;
+
+	> ol {
+		> li {
+			&::marker,
+			h5 {
+				font-size: large;
+			}
+			h5 {
+				margin: 10px;
+			}
+		}
+	}
+}

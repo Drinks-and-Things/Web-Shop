@@ -1,0 +1,95 @@
+[
+	{
+		"metadata": { "tags": [] },
+		"sys": {
+			"space": { "sys": { "type": "Link", "linkType": "Space", "id": "tmd8zk4nqssw" } },
+			"id": "59D0atUhDN5CLPml5qLp5h",
+			"type": "Entry",
+			"createdAt": "2021-03-28T22:45:00.468Z",
+			"updatedAt": "2021-03-28T22:45:00.468Z",
+			"environment": { "sys": { "id": "master", "type": "Link", "linkType": "Environment" } },
+			"revision": 1,
+			"contentType": {
+				"sys": { "type": "Link", "linkType": "ContentType", "id": "produkt" }
+			},
+			"locale": "de-AT"
+		},
+		"fields": {
+			"metaTitle": "Shisha",
+			"metaDescription": "Bestell dir deine Shisha für einen Tag",
+			"shopifyId": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zOTYxMjk4NDE2NDUwMQ==",
+			"name": "Shisha",
+			"slug": "shisha",
+			"description": {
+				"data": {},
+				"content": [
+					{
+						"data": {},
+						"content": [
+							{
+								"data": {},
+								"marks": [],
+								"value": "Bestell dir deine Shisha für einen Tag",
+								"nodeType": "text"
+							}
+						],
+						"nodeType": "paragraph"
+					}
+				],
+				"nodeType": "document"
+			},
+			"category": {
+				"metadata": { "tags": [] },
+				"sys": {
+					"space": {
+						"sys": { "type": "Link", "linkType": "Space", "id": "tmd8zk4nqssw" }
+					},
+					"id": "5V42SkQg1Ye305fxuSWdDB",
+					"type": "Entry",
+					"createdAt": "2021-03-28T20:36:01.855Z",
+					"updatedAt": "2021-03-28T20:36:01.855Z",
+					"environment": {
+						"sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+					},
+					"revision": 1,
+					"contentType": {
+						"sys": { "type": "Link", "linkType": "ContentType", "id": "category" }
+					},
+					"locale": "de-AT"
+				},
+				"fields": {
+					"title": "Shisha",
+					"metaTitle": "Shisha",
+					"metaDescription": "Bestell dir deine Shisha für einen Tag"
+				}
+			},
+			"options": [
+				{
+					"metadata": { "tags": [] },
+					"sys": {
+						"space": {
+							"sys": { "type": "Link", "linkType": "Space", "id": "tmd8zk4nqssw" }
+						},
+						"id": "nuXiKys5bb2fy3iECDiSA",
+						"type": "Entry",
+						"createdAt": "2021-03-28T22:44:46.290Z",
+						"updatedAt": "2021-03-28T22:44:46.290Z",
+						"environment": {
+							"sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+						},
+						"revision": 1,
+						"contentType": {
+							"sys": {
+								"type": "Link",
+								"linkType": "ContentType",
+								"id": "productOptions"
+							}
+						},
+						"locale": "de-AT"
+					},
+					"fields": { "name": "Geschmackssorten", "values": ["Apfel", "Banane", "Mango"] }
+				}
+			]
+		}
+	}
+]

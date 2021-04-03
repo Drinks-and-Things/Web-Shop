@@ -1,0 +1,21 @@
+.cart__wrapper {
+	width: 50%;
+	height: 40px;
+	// border: 1px solid;
+	cursor: pointer;
+}
+.hovered {
+	color: red;
+}
+
+.cart__basket {
+	font-size: 0.55rem;
+	position: absolute;
+	top: -5px;
+	right: -8px;
+	width: 17px;
+	height: 17px;
+	color: #fff;
+	background-color: #418deb;
+	border-radius: 50%;
+}

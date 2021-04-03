@@ -1,0 +1,239 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootswatch/dist/lux/bootswatch';
+@import '~react-multi-carousel/lib/styles.css';
+@import 'nprogress';
+@import 'transition';
+@import 'animations';
+
+// * {
+// 	background: #000 !important;
+// 	color: #0f0 !important;
+// 	outline: solid #f00 1px !important;
+// }
+
+body {
+	width: 100%;
+	min-width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body.drawer-open {
+	aside[class~='sidebar'] {
+		transition: all 0.75s;
+	}
+}
+
+button {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+	font-weight: bold;
+}
+
+footer {
+	a {
+		background-color: transparent;
+		color: #919aa1;
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+nav {
+	.navbar-item {
+		img {
+			max-height: unset;
+		}
+	}
+}
+
+.grid-2 {
+	margin: 1em;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
+	grid-gap: 25px;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+@media only screen and (max-width: 991px) {
+	.nav-item {
+		margin-right: 0;
+	}
+}
+
+.opacity-3 {
+	opacity: 60%;
+}
+
+.opacity-4 {
+	opacity: 80%;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+	box-shadow: none;
+}
+.btn-primary:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus {
+	/* box-shadow: 0 0 0 0.2rem rgb(0 0 0 / 50%); */
+	box-shadow: none;
+}
+
+.drawer-open {
+	overflow: hidden;
+}
+
+.toggle {
+	&::after {
+		display: inline-block;
+		margin-left: 0.255em;
+		vertical-align: 0.255em;
+		content: '';
+		border-top: 0.3em solid;
+		border-right: 0.3em solid transparent;
+		border-bottom: 0;
+		border-left: 0.3em solid transparent;
+		-webkit-align-self: center;
+		align-self: center;
+	}
+}
+
+// .card {
+// 	// border: 1px solid;
+// 	-webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+// 		0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+// 	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+// 		0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+// }
+
+.btn {
+	font-size: 0.765625rem;
+}
+
+.prod__amount {
+	font-size: 20px;
+	width: 70%;
+	max-width: 150px;
+	font-weight: normal;
+	display: inline;
+	margin-bottom: 0;
+	text-align: center;
+	padding: 0.5rem 0.75rem;
+	line-height: 1;
+	color: #1a1a1a;
+	background-color: #fff;
+	border: 1px solid #dee2e6;
+}
+
+.cover {
+	background-size: cover !important;
+}
+
+.bg-center {
+	background-repeat: no-repeat;
+}
+
+.br2 {
+	border-radius: 0.25rem;
+}
+
+.w2 {
+	width: 2rem;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.bg-black-80 {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.pv5 {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+.ph3 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+@media screen and (min-width: 60em) {
+	.tc-l {
+		text-align: center;
+	}
+}
+
+//Animations
+
+.puff-in-center {
+	-webkit-animation: puff-in-center 0.35s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+	animation: puff-in-center 0.35s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+.slide-in-elliptic-top-fwd {
+	-webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.swirl-in-fwd {
+	-webkit-animation: swirl-in-fwd 0.7s ease-out both;
+	animation: swirl-in-fwd 0.7s ease-out both;
+}
+
+.slide-in-bck-center {
+	-webkit-animation: slide-in-bck-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: slide-in-bck-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+	animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.pop-in {
+	-webkit-animation: 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running pop-in;
+	animation: 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running pop-in;
+}
+
+.pop-in-slow {
+	-webkit-animation: 2s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running pop-in;
+	animation: 2s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running pop-in;
+}
+
+.scale-hover-1_1 {
+	transition: all 0.3s;
+
+	&:hover {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+
+.scale-hover-1_2 {
+	transition: all 0.3s;
+
+	&:hover {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+}
+
+.scale-1_2 {
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+	transition: all 0.3s;
+}

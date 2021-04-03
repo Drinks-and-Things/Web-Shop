@@ -1,0 +1,95 @@
+.sy__whatshelp {
+	right: 25px;
+	bottom: 25px;
+	position: fixed;
+	z-index: 9999;
+
+	button {
+		position: relative;
+
+		&.sywh__open__services {
+			background-color: #000;
+			color: #fff;
+			line-height: 55px;
+			margin-top: 10px;
+			border: none;
+			cursor: pointer;
+			font-size: 23px;
+			width: 55px;
+			height: 55px;
+			text-align: center;
+			box-shadow: 2px 2px 8px -3px #000;
+			border-radius: 100%;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			-ms-border-radius: 100%;
+			display: inline-block;
+
+			&:hover::before,
+			&:hover::after {
+				display: block;
+			}
+
+			&::before {
+				top: 11px;
+			}
+
+			svg {
+				line-height: 55px;
+			}
+		}
+	}
+
+	$items: 5;
+	$timeOffset: 0.1s;
+	$aniLength: $items * $timeOffset;
+
+	.sywh__services {
+		width: 55px;
+		height: auto;
+		visibility: hidden;
+
+		a {
+			opacity: 0;
+			transition: all $aniLength ease;
+
+			&.fadeOut {
+				// -webkit-animation: fadeOut $aniLength;
+				// animation: fadeout $aniLength;
+				@for $i from $items through 1 {
+					&:nth-child(#{$i}) {
+						transition-delay: $i * $timeOffset;
+					}
+				}
+			}
+
+			&.fadeIn {
+				opacity: 1;
+				visibility: visible;
+				// -webkit-animation: fadeIn $aniLength;
+				// animation: fadeIn $aniLength;
+				$j: 1;
+				@for $i from 5 through 1 {
+					&:nth-child(#{$i}) {
+						transition-delay: $j * $timeOffset;
+					}
+					$j: $j + 1;
+				}
+			}
+		}
+	}
+
+	.opened {
+		&::after,
+		&::before {
+			display: none !important;
+		}
+	}
+
+	.share {
+		vertical-align: -0.2em;
+		position: relative;
+		right: 2px;
+		top: 1.8px;
+	}
+}
