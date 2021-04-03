@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 import Header from './Header';
 import Text from './Text';
 import { Company, Copyright } from './Sections';
@@ -17,12 +18,13 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 			}}
 		>
 			<Image
-				src='http://i.giphy.com/5lF3pQpdquCBy.gif'
-				alt={alt}
+				src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/5lF3pQpdquCBy.gif?v=1617418747'
+				alt={'Ein sich bewegendes Grid'}
 				layout='fill'
 				objectFit='cover'
 				objectPosition='center'
 				className={`${styles.bgImage} bg-primary`}
+				unoptimized={true}
 			/>
 
 			<section className={`${styles.footer} bg-primary`}>
@@ -93,7 +95,7 @@ function Logo() {
 				}}
 			>
 				<Image
-					src='/Logo/194x194.png'
+					src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/Logo194.jpg?v=1617393741'
 					alt='Logo'
 					loading='eager'
 					quality={100}

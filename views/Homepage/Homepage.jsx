@@ -37,11 +37,13 @@ export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt 
 		>
 			<section className={styles.landing__container}>
 				<Image
+					unoptimized={true}
 					className={`${styles.landing__image}`}
 					loading='eager'
 					// src={img}
 					src={`https:${img}`}
 					alt={alt}
+					quality={100}
 					layout='fill'
 					objectFit='cover'
 					objectPosition='center'
