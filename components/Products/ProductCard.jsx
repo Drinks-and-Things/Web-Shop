@@ -175,31 +175,27 @@ const ProductCard = ({ product, ...props }) => {
 						)}
 					</div>
 					{/* <Card.Title>{product.brand}</Card.Title> */}
-					<Container>
-						<Row className='p-0'>
-							<Col sm='10' className='p-0'>
-								<Card.Text className='h5'>{product.name}</Card.Text>
-							</Col>
-							{product.description && (
-								<Col sm='2' className='p-0'>
-									<div
-										className='float-right'
-										role='button'
-										onClick={() => {
-											setDescModalShow(true);
-										}}
-									>
-										<InfoIcon color='#000' />
-									</div>
-									<DescriptionDialog
-										description={product.description}
-										modalShow={descModalShow}
-										setModalShow={setDescModalShow}
-									/>
-								</Col>
-							)}
-						</Row>
-					</Container>
+					{product.description && (
+						<>
+							<div
+								className='float-right'
+								role='button'
+								onClick={() => {
+									setDescModalShow(true);
+								}}
+							>
+								<InfoIcon color='#000' />
+							</div>
+							<DescriptionDialog
+								description={product.description}
+								modalShow={descModalShow}
+								setModalShow={setDescModalShow}
+							/>
+						</>
+					)}
+					<Col sm='12' className='p-0'>
+						<Card.Text className='h5'>{product.name}</Card.Text>
+					</Col>
 					<h3 className='text-left'>
 						{price === '--' ? '--' : formatNumber(price * amount)}
 					</h3>

@@ -82,7 +82,7 @@ const CartPage = forwardRef(({ opened, close }, ref) => {
 											aria-disabled={checkSum() !== true ? 'true' : 'false'}
 											href={checkout.webUrl}
 											className={`btn btn-primary mb-2 ${
-												checkSum() !== true && s.isDisabled
+												checkSum() !== true && 'disabled' + s.isDisabled
 											}`}
 										>
 											CHECKOUT

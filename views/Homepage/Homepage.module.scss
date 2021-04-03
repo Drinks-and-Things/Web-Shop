@@ -109,7 +109,6 @@
 	margin-left: auto;
 	min-width: 340px;
 	max-width: 400px;
-	min-height: 500px;
 	@media (min-width: 576px) {
 		max-width: 540px;
 	}
@@ -125,5 +124,6 @@
 }
 
 .container {
+	min-height: 500px;
 	margin-top: 20px;
 }

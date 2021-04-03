@@ -179,6 +179,7 @@ export default function Shisha({
 								<Col lg={4} className='d-flex justify-content-center'>
 									<Image
 										priority='high'
+										loading='eager'
 										src={img}
 										alt={alt ? alt : `Bild von ${name}`}
 										height={height ? height : 350}
