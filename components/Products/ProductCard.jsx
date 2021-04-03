@@ -159,12 +159,13 @@ const ProductCard = ({ product, ...props }) => {
 					>
 						{product.img && (
 							<Image
+								// unoptimized={true}
 								quality={100}
 								loading='lazy'
 								height='300'
 								width='215'
 								src={product.img}
-								// alt={product.alt}
+								alt={product.alt}
 							/>
 						)}
 					</div>
