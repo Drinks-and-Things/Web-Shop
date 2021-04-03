@@ -174,26 +174,24 @@ const ProductCard = ({ product, ...props }) => {
 							<Col sm='10' className='p-0'>
 								<Card.Text className='h5'>{product.name}</Card.Text>
 							</Col>
-							<Col sm='2' className='p-0'>
-								{product.description && (
-									<>
-										<div
-											className='align-self-end'
-											role='button'
-											onClick={() => {
-												setDescModalShow(true);
-											}}
-										>
-											<InfoIcon color='#000' />
-										</div>
-										<DescriptionDialog
-											description={product.description}
-											modalShow={descModalShow}
-											setModalShow={setDescModalShow}
-										/>
-									</>
-								)}
-							</Col>
+							{product.description && (
+								<Col sm='2' className='p-0'>
+									<div
+										className='align-self-end'
+										role='button'
+										onClick={() => {
+											setDescModalShow(true);
+										}}
+									>
+										<InfoIcon color='#000' />
+									</div>
+									<DescriptionDialog
+										description={product.description}
+										modalShow={descModalShow}
+										setModalShow={setDescModalShow}
+									/>
+								</Col>
+							)}
 						</Row>
 					</Container>
 					<h3 className='text-left'>

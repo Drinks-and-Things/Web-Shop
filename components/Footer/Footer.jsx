@@ -95,7 +95,7 @@ function Logo() {
 				}}
 			>
 				<Image
-					src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/Logo194.jpg?v=1617393741'
+					src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/194x194.png?v=1617444693'
 					alt='Logo'
 					loading='eager'
 					quality={100}
