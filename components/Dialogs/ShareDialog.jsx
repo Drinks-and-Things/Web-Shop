@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { Target, Targets } from './MyDialog';
 import { socialMedia } from './media';
