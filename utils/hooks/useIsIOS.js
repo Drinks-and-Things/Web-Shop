@@ -38,7 +38,8 @@ function checkForIOS() {
 		localStorage.setItem('installPrompt', today);
 	}
 
-	return { isIOS, isSafari, prompt };
+	//return { isIOS, isSafari, prompt };
+	return { isIOS, prompt };
 }
 
 // const myDate = new Date();
