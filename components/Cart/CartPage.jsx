@@ -21,6 +21,13 @@ const CartPage = forwardRef(({ opened, close }, ref) => {
 		setUpdating(false);
 	}
 
+	function checkSum() {
+		if (checkout.totalPrice > 10) {
+			return true;
+		}
+		return false;
+	}
+
 	return (
 		<div
 			ref={ref}
@@ -69,8 +76,15 @@ const CartPage = forwardRef(({ opened, close }, ref) => {
 									<h3 className='m-0 txt-right'>{checkout.totalPrice}</h3>
 									{/* <h3 className='m-0 txt-right'>{formatNumber(total)}</h3> */}
 									<hr className='my-4' />
+									{checkSum() === false && <p>Mindestbestellwert beträgt 10€</p>}
 									<div className='text-center'>
-										<a href={checkout.webUrl} className='btn btn-primary mb-2'>
+										<a
+											aria-disabled={checkSum() !== true ? 'true' : 'false'}
+											href={checkout.webUrl}
+											className={`btn btn-primary mb-2 ${
+												checkSum() !== true && s.isDisabled
+											}`}
+										>
 											CHECKOUT
 										</a>
 									</div>

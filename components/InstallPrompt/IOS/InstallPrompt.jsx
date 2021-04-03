@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export default function InstallPrompt({ ...props }) {
 	const [modalOpen, setModalOpen] = useState(false);
@@ -9,7 +9,7 @@ export default function InstallPrompt({ ...props }) {
 	}, []);
 
 	return (
-		<Modal show={modalOpen} centered>
+		<MyModal show={modalOpen} onHide={() => setModalOpen(false)} centered>
 			<div className='align-content-center p-4'>
 				<div style={{ marginTop: '-50px' }} className='text-center'>
 					<img
@@ -59,6 +59,41 @@ export default function InstallPrompt({ ...props }) {
 					<Button onClick={() => setModalOpen(false)}>Schließen</Button>
 				</div>
 			</div>
-		</Modal>
+		</MyModal>
+	);
+}
+
+import { useOutsideClick } from '@utils/hooks';
+const NOOP = () => {};
+function MyModal({ show = false, onHide = NOOP, children }) {
+	const ref = useRef(null);
+
+	useOutsideClick(ref, () => {
+		if (show === true) {
+			onHide();
+		}
+	});
+
+	return (
+		<>
+			{show === true && (
+				<>
+					<div className={`fade show modal-backdrop`}></div>
+					<div
+						role='dialog'
+						aria-modal='true'
+						tabIndex='-1'
+						style={{
+							display: 'block',
+						}}
+						className={`fade modal show`} //${show === true && 'show'}
+					>
+						<div className='modal-dialog modal-dialog-centered' ref={ref}>
+							<div className='modal-content'>{children}</div>
+						</div>
+					</div>
+				</>
+			)}
+		</>
 	);
 }

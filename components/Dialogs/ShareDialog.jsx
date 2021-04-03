@@ -1,15 +1,13 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 import { Target, Targets } from './MyDialog';
 import { socialMedia } from './media';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 
-function ShareDialog({ onHide, ...props }) {
+function ShareDialog({ onHide, show, ...props }) {
 	return (
-		<Modal
+		<MyModal
+			show={show}
 			onHide={onHide}
-			size='lg'
 			aria-labelledby='contained-modal-title-vcenter'
 			centered
 			{...props}
@@ -29,8 +27,43 @@ function ShareDialog({ onHide, ...props }) {
 			<Modal.Footer>
 				<Button onClick={onHide}>Schließen</Button>
 			</Modal.Footer>
-		</Modal>
+		</MyModal>
 	);
 }
 
 export default ShareDialog;
+
+import { useOutsideClick } from '@utils/hooks';
+const NOOP = () => {};
+function MyModal({ show = false, onHide = NOOP, children }) {
+	const ref = useRef(null);
+
+	useOutsideClick(ref, () => {
+		if (show === true) {
+			onHide();
+		}
+	});
+
+	return (
+		<>
+			{show === true && (
+				<>
+					<div className={`fade show modal-backdrop`}></div>
+					<div
+						role='dialog'
+						aria-modal='true'
+						tabIndex='-1'
+						style={{
+							display: 'block',
+						}}
+						className={`fade modal show`} //${show === true && 'show'}
+					>
+						<div className='modal-dialog modal-dialog-centered' ref={ref}>
+							<div className='modal-content'>{children}</div>
+						</div>
+					</div>
+				</>
+			)}
+		</>
+	);
+}
