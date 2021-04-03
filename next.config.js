@@ -12,7 +12,7 @@ module.exports = withPWA({
 		runtimeCaching,
 	},
 	images: {
-		domains: ['cdn.shopify.com', 'images.ctfassets.net'],
+		// domains: ['cdn.shopify.com', 'images.ctfassets.net'],
 		https: true,
 	},
 	webpack: (config, { isServer }) => {
