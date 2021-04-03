@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 export default function MyHead({
 	title = 'Drinks & Things',
-	description = 'Drinks & Things deine Online Bar für jede Party und Feier.Usere einzige Maßnahme, DICH zufrieden zu stellen 👊',
+	description = 'Drinks & Things deine Online Bar für jede Party und Feier. Usere einzige Maßnahme, DICH zufrieden zu stellen 👊',
 	image = 'https://cdn.shopify.com/s/files/1/0558/2739/8864/files/Logo256.jpg?v=1617393741',
 	alt = 'Drinks & Things Logo',
 	handle = '',

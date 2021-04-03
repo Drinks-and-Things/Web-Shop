@@ -25,13 +25,14 @@ function checkForIOS() {
 	const days = dayjs(today).diff(lastPrompt, 'days');
 
 	const ua = window.navigator.userAgent;
+	const isApple = ['iPhone', 'iPad', 'iPod'].includes(navigator.platform);
 	const isIPad = !!ua.match(/iPad/i);
 	const isIPhone = !!ua.match(/iPhone/i);
 	const isIOS = isIPad || isIPhone;
-	const webkit = !!ua.match(/WebKit/i);
-	const isSafari = isIOS && webkit && !ua.match(/CriOS/i);
+	// const webkit = !!ua.match(/WebKit/i);
+	// const isSafari = isIOS && webkit && !ua.match(/CriOS/i);
 
-	const prompt = (isNaN(days) || days > 30) && isIOS && isSafari;
+	const prompt = (isNaN(days) || days > 30) && (isIOS || isApple); //&& isSafari
 
 	if (prompt && 'localStorage' in window) {
 		localStorage.setItem('installPrompt', today);

@@ -54,7 +54,7 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 							</Col>
 							<Col lg={4} md={6} className='mb-4 mb-lg-0'>
 								<Header>Öffnungszeiten</Header>
-								<ul className='list-unstyled mb-0'>
+								<ul className='list-unstyled mb-0' itemProp='openingHours'>
 									<Text>Mo-Do: 20:00-02:00</Text>
 									<Text>Fr und Sa: 20:00-04:00</Text>
 									<Text>So: 20:00-02:00</Text>

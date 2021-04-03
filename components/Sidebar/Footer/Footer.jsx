@@ -4,10 +4,10 @@ import styles from './Footer.module.scss';
 import { agb, contact, impressum } from '@utils/lib/routes';
 
 const el = [
-	// {
-	// 	href: contact,
-	// 	text: 'Kontakt',
-	// },
+	{
+		href: contact,
+		text: 'Kontakt',
+	},
 	{
 		href: impressum,
 		text: 'Impressum',
