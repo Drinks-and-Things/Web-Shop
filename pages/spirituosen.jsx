@@ -3,7 +3,7 @@ import React from 'react';
 import Drinks from '@views/Drinks';
 import { getPageData } from '@utils/Contentful';
 
-export default function SpirituosenPage() {
+export default function SpirituosenPage({ products, meta }) {
 	return <Drinks meta={meta} products={products} title='Spirituosen' />;
 }
 
