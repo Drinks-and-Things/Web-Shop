@@ -1,4 +1,3 @@
-import { gql } from 'graphql-request';
 import { SHOPIFY_ACCESS_TOKEN, SHOPIFY_DOMAIN } from './lib/const';
 
 // import { OLD_SHOPIFY_ACCESS_TOKEN, OLD_SHOPIFY_DOMAIN } from './lib/const';
@@ -30,7 +29,7 @@ export async function fetchFromShopify(query, variables) {
 
 export async function fetchMultipleNodes(ids) {
 	const data = await fetchFromShopify(
-		gql`
+		`
 			query getNodes($ids: [ID!]!) {
 				nodes(ids: $ids) {
 					... on ProductVariant {
