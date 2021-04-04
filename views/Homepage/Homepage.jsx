@@ -19,11 +19,13 @@ const responsive = {
 	tablet: {
 		breakpoint: { max: 992, min: 575 },
 		items: 2,
+		swipeable: true,
 	},
 	mobile: {
 		breakpoint: { max: 575, min: 0 },
 		items: 1,
 		partialVisibilityGutter: 20,
+		swipeable: true,
 	},
 };
 
@@ -71,12 +73,12 @@ export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt 
 						<Carousel
 							responsive={responsive}
 							showDots={false}
-							slidesToSlide={1}
 							ssr={true}
 							partialVisible={true}
-							// removeArrowOnDeviceType={['mobile']}
+							removeArrowOnDeviceType={['mobile']}
 							containerClass='container-with-dots'
-							deviceType={''}
+							// slidesToSlide={1}
+							// deviceType={''}
 						>
 							{products.map((product) => {
 								return (

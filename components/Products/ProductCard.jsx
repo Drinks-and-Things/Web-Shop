@@ -12,7 +12,7 @@ import { DecrementButton, IncrementButton } from '@components/Buttons';
 import OptionsDialog from '@components/OptionsDialog/OptionsDialog.jsx';
 import DescriptionDialog from '@components/DescriptionDialog/DescriptionDialog.jsx';
 import { InfoIcon } from '@components/Icons/index.js';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 const ProductCard = ({ product, ...props }) => {
 	const query = `
@@ -93,8 +93,9 @@ const ProductCard = ({ product, ...props }) => {
 	async function confirmAdd() {
 		let toastId;
 		try {
+			console.log(product.options);
 			const lineItem =
-				Object.entries(selectedOptions).length === 0
+				product.options === undefined
 					? {
 							variantId: product.shopifyId,
 							quantity: amount,
@@ -111,7 +112,7 @@ const ProductCard = ({ product, ...props }) => {
 			// 				value,
 			// 		  }))
 			// 		: [];
-
+			console.log(lineItem);
 			setAdding(true);
 			toastId = toast.loading(() => (
 				<div style={{ display: 'block' }}>
@@ -177,14 +178,15 @@ const ProductCard = ({ product, ...props }) => {
 					{/* <Card.Title>{product.brand}</Card.Title> */}
 					{product.description && (
 						<>
-							<div
-								className='float-right'
-								role='button'
-								onClick={() => {
-									setDescModalShow(true);
-								}}
-							>
-								<InfoIcon color='#000' />
+							<div className='d-flex flex-row-reverse'>
+								<button
+									role='button'
+									onClick={() => {
+										setDescModalShow(true);
+									}}
+								>
+									<InfoIcon color='#000' className='float-right ' />
+								</button>
 							</div>
 							<DescriptionDialog
 								description={product.description}

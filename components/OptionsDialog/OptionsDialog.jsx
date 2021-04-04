@@ -1,5 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
+import Modal from 'react-modal';
+
+const customStyles = {
+	content: {
+		top: '50%',
+		left: '50%',
+		right: 'auto',
+		bottom: 'auto',
+		marginRight: '-50%',
+		// transform: 'translate(-50%, -50%)',
+	},
+};
+
+Modal.setAppElement('#__next');
 
 export default function OptionsDialog({
 	options = [],
@@ -19,6 +33,10 @@ export default function OptionsDialog({
 		setTmpOptions(current);
 	}, []);
 
+	// useEffect(() => {
+	// 	document.body.classList.toggle('drawer-open', modalShow);
+	// }, [modalShow]);
+
 	function selectOption(name, option) {
 		// console.log(`gewählter ${name}: ${option}`);
 		setTmpOptions({ ...tmpOptions, [name]: option });
@@ -31,60 +49,67 @@ export default function OptionsDialog({
 		}));
 
 		setSelectedOptions(customAttributes);
-		console.log(customAttributes);
+		// console.log(customAttributes);
 		setModalShow(false);
 		await confirmAdd();
 	};
 
 	return (
-		<MyModal
-			show={modalShow}
-			onHide={() => {
-				confirmAttributes();
+		<Modal
+			isOpen={modalShow}
+			onRequestClose={() => {
+				setModalShow(false);
 			}}
-			centered
+			closeTimeoutMS={500}
+			style={customStyles}
+			contentLabel='Optionen des Produktes'
 		>
-			<Container className='p-4'>
-				{options && options.length > 0
-					? options.map(({ fields }, i) => (
-							<Row
-								key={fields.name}
-								className={
-									'd-flex justify-content-center' + (i !== 0 ? 'mt-3' : '')
-								}
-							>
-								<p className='h3 font-weight-bold align-items-center d-flex justify-content-center'>
-									{fields.name}
-								</p>
-								<div
-									role='listbox'
-									className='d-flex justify-content-center flex-wrap'
+			{/* show={modalShow}
+			onHide={() => {
+				setModalShow(false);
+			}}
+			centered */}
+			<div className='modal-body'>
+				<Container className='p-4'>
+					{options && options.length > 0
+						? options.map(({ fields }, i) => (
+								<Row
+									key={fields.name}
+									className={'d-block ' + (i !== 0 ? 'mt-3' : '')}
 								>
-									{fields.values.map((option) => (
-										<Button
-											key={option}
-											variant='outline-primary'
-											role='option'
-											className={
-												tmpOptions[fields.name] === option && 'active'
-											}
-											style={{
-												margin: '.25em',
-											}}
-											onClick={() => selectOption(fields.name, option)}
-										>
-											{option}
-										</Button>
-									))}
-								</div>
-							</Row>
-					  ))
-					: null}
-				<Row className='pt-2 justify-content-center'>
-					<Button onClick={confirmAttributes}>Bestätigen</Button>
-				</Row>
-			</Container>
-		</MyModal>
+									<div>
+										<p className='h3 text-center'>{fields.name}</p>
+									</div>
+									<div
+										role='listbox'
+										className='d-flex justify-content-center flex-wrap'
+									>
+										{fields.values.map((option) => (
+											<Button
+												key={option}
+												variant='outline-primary'
+												role='option'
+												className={
+													tmpOptions[fields.name] === option && 'active'
+												}
+												style={{
+													margin: '.25em',
+												}}
+												onClick={() => selectOption(fields.name, option)}
+											>
+												{option}
+											</Button>
+										))}
+									</div>
+								</Row>
+						  ))
+						: null}
+					<Row className='pt-2 justify-content-center'>
+						<Button onClick={confirmAttributes}>Bestätigen</Button>
+					</Row>
+				</Container>
+			</div>
+		</Modal>
 	);
 }
 

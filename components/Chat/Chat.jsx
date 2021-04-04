@@ -1,13 +1,12 @@
-import React, { useRef, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faTimes, faShareAlt } from '@fortawesome/free-solid-svg-icons';
-
-import Service from './Service';
-import { useOutsideClick } from '@utils/hooks';
-import { services } from './services';
-import { ShareIcon } from '@components/Icons';
 import { ShareDialog } from '@components/Dialogs';
+import { ShareIcon } from '@components/Icons';
+import { faComment, faShareAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useOutsideClick } from '@utils/hooks';
+import React, { useRef, useState } from 'react';
 import s from './Chat.module.scss';
+import Service from './Service';
+import { services } from './services';
 
 export default function Chat({ className, footerVisible, ...rest }) {
 	const ref = useRef(null);

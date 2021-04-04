@@ -10,6 +10,7 @@ import { Footer } from '../Footer';
 import { Chat } from '../Chat';
 import { Sidebar } from '@components/Sidebar';
 import s from './Layout.module.scss';
+import OpeningHoursPopUp from '@components/OpeningHoursPopUp';
 
 export default function Layout({ children, entertainment }) {
 	const [accpted, setAccepted] = useUser();
@@ -101,6 +102,7 @@ export default function Layout({ children, entertainment }) {
 				<main>{children}</main>
 				<Footer />
 			</div>
+			<OpeningHoursPopUp />
 		</>
 	);
 }

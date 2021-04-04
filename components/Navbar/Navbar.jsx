@@ -3,12 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from 'react-bootstrap/Navbar';
 import { Cart } from '../Cart';
-import Nav from '../Nav';
+import LieferKosten from '@components/LieferKosten';
 import styles from './Navbar.module.scss';
 
 const MyNavbar = ({ toggleSidebar, toggleCart, children }) => {
 	return (
 		<header className={styles.header}>
+			<LieferKosten />
+
 			<Navbar
 				bg='primary'
 				expand='xl'

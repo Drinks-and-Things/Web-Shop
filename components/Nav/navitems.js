@@ -8,6 +8,9 @@ import {
 	entertainment,
 	alkDrinks,
 	alkFreeDrinks,
+	beer,
+	spirituosen,
+	wine,
 } from '@lib/routes';
 
 import {
@@ -36,7 +39,9 @@ export const navItems = [
 		icon: SodaDrink,
 		child: 'Drinks',
 		items: [
-			{ href: alkDrinks, title: 'Alk Getränke' },
+			{ href: beer, title: 'Bier' },
+			{ href: spirituosen, title: 'Spirituosen' },
+			{ href: wine, title: 'Wein/Sekt/Aperitif' },
 			{ href: alkFreeDrinks, title: 'Alkoholfreie Getränke' },
 		],
 	},

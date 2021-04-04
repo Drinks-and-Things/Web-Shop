@@ -1,6 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Modal from 'react-modal';
 import { Button } from 'react-bootstrap';
 
+const customStyles = {
+	content: {
+		top: '50%',
+		left: '50%',
+		right: 'auto',
+		bottom: 'auto',
+		marginRight: '-50%',
+		// transform: 'translate(-50%, -50%)',
+	},
+};
+
+Modal.setAppElement('#__next');
 export default function InstallPrompt({ ...props }) {
 	const [modalOpen, setModalOpen] = useState(false);
 
@@ -8,9 +21,18 @@ export default function InstallPrompt({ ...props }) {
 		setModalOpen(true);
 	}, []);
 
+	// <MyModal show={modalOpen} onHide={() => setModalOpen(false)} centered>
 	return (
-		<MyModal show={modalOpen} onHide={() => setModalOpen(false)} centered>
-			<div className='align-content-center p-4'>
+		<Modal
+			isOpen={modalOpen}
+			onRequestClose={() => {
+				setModalOpen(false);
+			}}
+			closeTimeoutMS={500}
+			style={customStyles}
+			contentLabel='Beschreibung des Produktes'
+		>
+			<div className='align-content-center p-4 '>
 				<div style={{ marginTop: '-50px' }} className='text-center'>
 					<img
 						src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/95x95.png?v=1617407618'
@@ -59,41 +81,41 @@ export default function InstallPrompt({ ...props }) {
 					<Button onClick={() => setModalOpen(false)}>Schließen</Button>
 				</div>
 			</div>
-		</MyModal>
+		</Modal>
 	);
 }
 
-import { useOutsideClick } from '@utils/hooks';
-const NOOP = () => {};
-function MyModal({ show = false, onHide = NOOP, children }) {
-	const ref = useRef(null);
+// import { useOutsideClick } from '@utils/hooks';
+// const NOOP = () => {};
+// function MyModal({ show = false, onHide = NOOP, children }) {
+// 	const ref = useRef(null);
 
-	useOutsideClick(ref, () => {
-		if (show === true) {
-			onHide();
-		}
-	});
+// 	useOutsideClick(ref, () => {
+// 		if (show === true) {
+// 			onHide();
+// 		}
+// 	});
 
-	return (
-		<>
-			{show === true && (
-				<>
-					<div className={`fade show modal-backdrop`}></div>
-					<div
-						role='dialog'
-						aria-modal='true'
-						tabIndex='-1'
-						style={{
-							display: 'block',
-						}}
-						className={`fade modal show`} //${show === true && 'show'}
-					>
-						<div className='modal-dialog modal-dialog-centered' ref={ref}>
-							<div className='modal-content'>{children}</div>
-						</div>
-					</div>
-				</>
-			)}
-		</>
-	);
-}
+// 	return (
+// 		<>
+// 			{show === true && (
+// 				<>
+// 					<div className={`fade show modal-backdrop`}></div>
+// 					<div
+// 						role='dialog'
+// 						aria-modal='true'
+// 						tabIndex='-1'
+// 						style={{
+// 							display: 'block',
+// 						}}
+// 						className={`fade modal show`} //${show === true && 'show'}
+// 					>
+// 						<div className='modal-dialog modal-dialog-centered' ref={ref}>
+// 							<div className='modal-content'>{children}</div>
+// 						</div>
+// 					</div>
+// 				</>
+// 			)}
+// 		</>
+// 	);
+// }

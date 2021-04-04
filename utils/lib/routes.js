@@ -5,6 +5,10 @@ export const drinks = '/drinks';
 export const alkFreeDrinks = '/alkoholfreie-getranke';
 export const alkDrinks = '/alkohol-getranke';
 
+export const wine = '/wein-aperitif-sekt';
+export const spirituosen = '/spirituosen';
+export const beer = '/bier';
+
 export const shisha = '/shisha';
 export const entertainment = '/entertainment';
 export const contact = '/kontakt';
