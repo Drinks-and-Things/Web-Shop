@@ -14,7 +14,7 @@ export default function Contact() {
 							md={4}
 							className='d-flex flex-column justify-content-center align-items-center'
 						>
-							<h3 className='h2'>Kontakt</h3>
+							<h3 className='h2'>Info</h3>
 							<ul className='list-unstyled'>
 								<li>
 									<a itemProp='telephone' dir='ltr' href='tel:+4368184072005'>

@@ -4,8 +4,8 @@ import Entertainment from '@views/Entertainment';
 import { getPageData } from '@utils/Contentful';
 // import { products } from '@utils/data/entertainment';
 
-export default function EntertainmentPage({ products }) {
-	return <Entertainment products={products} />;
+export default function EntertainmentPage({ products, meta }) {
+	return <Entertainment products={products} meta={meta} />;
 }
 
 export async function getStaticProps() {

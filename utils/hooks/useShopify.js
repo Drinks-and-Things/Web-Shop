@@ -17,8 +17,8 @@ const fetcher = async (query, variables) => {
 };
 
 export default function useShopify(query) {
-	const { data, error } = useSWR(query, fetcher, {
-		refreshInterval: 100000,
+	const { data, error, mutate } = useSWR(query, fetcher, {
+		refreshInterval: 500000,
 		dedupingInterval: 0,
 		revalidateOnMount: true,
 	});

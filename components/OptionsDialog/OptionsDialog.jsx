@@ -1,3 +1,4 @@
+import { XIcon } from '@components/Icons';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
 import Modal from 'react-modal';
@@ -9,6 +10,7 @@ const customStyles = {
 		right: 'auto',
 		bottom: 'auto',
 		marginRight: '-50%',
+		padding: '5px',
 		// transform: 'translate(-50%, -50%)',
 	},
 };
@@ -33,6 +35,15 @@ export default function OptionsDialog({
 		setTmpOptions(current);
 	}, []);
 
+	useEffect(() => {
+		const customAttributes = Object.entries(tmpOptions).map(([key, value]) => ({
+			key,
+			value,
+		}));
+
+		setSelectedOptions(customAttributes);
+	}, [tmpOptions]);
+
 	// useEffect(() => {
 	// 	document.body.classList.toggle('drawer-open', modalShow);
 	// }, [modalShow]);
@@ -43,12 +54,12 @@ export default function OptionsDialog({
 	}
 
 	const confirmAttributes = async () => {
-		const customAttributes = Object.entries(tmpOptions).map(([key, value]) => ({
-			key,
-			value,
-		}));
+		// const customAttributes = Object.entries(tmpOptions).map(([key, value]) => ({
+		// 	key,
+		// 	value,
+		// }));
 
-		setSelectedOptions(customAttributes);
+		// setSelectedOptions(customAttributes);
 		// console.log(customAttributes);
 		setModalShow(false);
 		await confirmAdd();
@@ -69,8 +80,31 @@ export default function OptionsDialog({
 				setModalShow(false);
 			}}
 			centered */}
-			<div className='modal-body'>
-				<Container className='p-4'>
+			<div
+				style={{
+					position: 'relative',
+				}}
+			>
+				<div
+					style={{
+						position: 'fixed',
+						top: '5px',
+						right: '5px',
+						padding: '15px',
+					}}
+					role='button'
+					onClick={() => setModalShow(false)}
+				>
+					<XIcon color={'#000'} width='30px' />
+				</div>
+				<div
+					className='px-4 pb-4'
+					style={{
+						maxHeight: 'calc(100vh - 7rem)',
+						overflowY: 'auto',
+						marginTop: '3.5rem',
+					}}
+				>
 					{options && options.length > 0
 						? options.map(({ fields }, i) => (
 								<Row
@@ -107,7 +141,7 @@ export default function OptionsDialog({
 					<Row className='pt-2 justify-content-center'>
 						<Button onClick={confirmAttributes}>Bestätigen</Button>
 					</Row>
-				</Container>
+				</div>
 			</div>
 		</Modal>
 	);

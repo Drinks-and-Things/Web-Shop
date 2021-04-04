@@ -2,7 +2,7 @@
 	right: 25px;
 	bottom: 25px;
 	position: fixed;
-	z-index: 9999;
+	z-index: 9;
 
 	button {
 		position: relative;
@@ -44,37 +44,46 @@
 	$timeOffset: 0.1s;
 	$aniLength: $items * $timeOffset;
 
-	.sywh__services {
-		width: 55px;
+	.services {
+		width: 0;
 		height: auto;
+		transition: all $aniLength ease-in-out;
+
+		&.active {
+			width: 55px;
+			height: auto;
+			.sywh__services {
+				width: 55px;
+				height: 55px;
+				visibility: visible;
+			}
+		}
+	}
+
+	.sywh__services {
+		height: 0;
+		opacity: 0;
 		visibility: hidden;
+		transition: all $aniLength ease;
 
-		a {
-			opacity: 0;
-			transition: all $aniLength ease;
-
-			&.fadeOut {
-				// -webkit-animation: fadeOut $aniLength;
-				// animation: fadeout $aniLength;
-				@for $i from $items through 1 {
-					&:nth-child(#{$i}) {
-						transition-delay: $i * $timeOffset;
-					}
+		&.fadeOut {
+			@for $i from $items through 1 {
+				&:nth-child(#{$i}) {
+					transition-delay: $i * $timeOffset;
 				}
 			}
+		}
 
-			&.fadeIn {
-				opacity: 1;
-				visibility: visible;
-				// -webkit-animation: fadeIn $aniLength;
-				// animation: fadeIn $aniLength;
-				$j: 1;
-				@for $i from 5 through 1 {
-					&:nth-child(#{$i}) {
-						transition-delay: $j * $timeOffset;
-					}
-					$j: $j + 1;
+		&.fadeIn {
+			opacity: 1;
+			visibility: visible;
+
+			$j: 1;
+			@for $i from 5 through 1 {
+				&:nth-child(#{$i}) {
+					transition-delay: $j * $timeOffset;
 				}
+				$j: $j + 1;
 			}
 		}
 	}

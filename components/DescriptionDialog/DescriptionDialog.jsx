@@ -13,7 +13,6 @@ const customStyles = {
 		right: 'auto',
 		bottom: 'auto',
 		marginRight: '-50%',
-		// transform: 'translate(-50%, -50%)',
 	},
 };
 
@@ -23,12 +22,12 @@ export default function DescriptionDialog({ description, modalShow, setModalShow
 	return (
 		<Modal
 			isOpen={modalShow}
-			onRequestClose={() => {
-				setModalShow(false);
-			}}
 			closeTimeoutMS={500}
 			style={customStyles}
 			contentLabel='Beschreibung des Produktes'
+			onRequestClose={() => {
+				setModalShow(false);
+			}}
 		>
 			<div className='p-4'>
 				{documentToReactComponents(description)}
@@ -56,7 +55,7 @@ centered
 > */
 }
 
-import { useOutsideClick } from '@utils/hooks';
+// import { useOutsideClick } from '@utils/hooks';
 
 // const NOOP = () => {};
 // function MyModal({ show = false, onHide = NOOP, children }) {

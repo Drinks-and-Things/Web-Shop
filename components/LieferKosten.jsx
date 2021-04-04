@@ -33,15 +33,15 @@ export default function LieferKosten() {
 					<Container>
 						<Row className='flex-row-reverse'>
 							<Col sm={1} className='align-content-center align-self-center'>
-								<div
-									role='button'
+								<button
+									type='button'
 									onClick={() => {
 										saveAktion();
 									}}
 									className='float-right p-3'
 								>
 									<XIcon />
-								</div>
+								</button>
 							</Col>
 							<Col sm={11}>
 								<div>

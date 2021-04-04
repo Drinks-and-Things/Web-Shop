@@ -37,7 +37,7 @@ export default function Chat({ className, footerVisible, ...rest }) {
 	return (
 		<>
 			<div ref={ref} className={`${s.sy__whatshelp} ${className}`} {...rest}>
-				<div className={`${s.sywh__services} ${servicesOpened === true ? s.active : ''}`}>
+				<div className={`${s.services} ${servicesOpened === true ? s.active : ''}`}>
 					<Service
 						key='Teilen'
 						as='a'

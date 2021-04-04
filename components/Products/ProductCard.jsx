@@ -2,7 +2,6 @@ import React, { memo, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Card from 'react-bootstrap/Card';
 import toast from 'react-hot-toast';
-// import useSWR from 'swr';
 
 import CartButton from '../Buttons/CartButton.jsx';
 import useShopify from '@utils/hooks/useShopify.js';
@@ -48,22 +47,15 @@ const ProductCard = ({ product, ...props }) => {
 	const { addProductToCart } = useCart();
 	const { data } = useShopify(query);
 
-	// const { data, error } = useSWR(query, fetcher, {
-	// 	refreshInterval: 100,
-	// 	dedupingInterval: 0,
-	// 	revalidateOnMount: true,
-	// 	refreshWhenHidden: true,
-	// });
-
 	useEffect(async () => {
 		if (data) {
-			const n = data.node;
-			setPrice(n.price.amount);
-			setAvailable(n.available);
+			const node = data.node;
+			setPrice(node.price.amount);
+			setAvailable(node.available);
 			if (available === true && quantity === 0) {
 				setQuantity(100);
 			} else {
-				setQuantity(n.quantity);
+				setQuantity(node.quantity);
 			}
 		}
 	}, [data]);
@@ -93,7 +85,8 @@ const ProductCard = ({ product, ...props }) => {
 	async function confirmAdd() {
 		let toastId;
 		try {
-			console.log(product.options);
+			// console.log(product.options);
+			// console.log(selectedOptions);
 			const lineItem =
 				product.options === undefined
 					? {
@@ -105,14 +98,7 @@ const ProductCard = ({ product, ...props }) => {
 							quantity: amount,
 							customAttributes: selectedOptions,
 					  };
-			// const customAttributes =
-			// 	selectedOptions !== {}
-			// 		? Object.entries(selectedOptions).map(([key, value]) => ({
-			// 				key,
-			// 				value,
-			// 		  }))
-			// 		: [];
-			console.log(lineItem);
+
 			setAdding(true);
 			toastId = toast.loading(() => (
 				<div style={{ display: 'block' }}>
@@ -134,6 +120,7 @@ const ProductCard = ({ product, ...props }) => {
 	}
 
 	const handleAdd = async () => {
+		// console.log('clicked add');
 		if (product.options) {
 			setModalShow(true);
 			// setModalOpen(true);
@@ -180,7 +167,8 @@ const ProductCard = ({ product, ...props }) => {
 						<>
 							<div className='d-flex flex-row-reverse'>
 								<button
-									role='button'
+									type='button'
+									className='py-2 pl-2 pr-1'
 									onClick={() => {
 										setDescModalShow(true);
 									}}
@@ -234,6 +222,7 @@ const ProductCard = ({ product, ...props }) => {
 					setModalShow={setModalShow}
 					setSelectedOptions={setSelectedOptions}
 					confirmAdd={confirmAdd}
+					selectedOptions={selectedOptions}
 				/>
 			) : null}
 		</>

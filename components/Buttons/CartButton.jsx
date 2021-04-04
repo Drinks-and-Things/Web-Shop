@@ -10,7 +10,7 @@ export default function CartButton({ onClick = NOOP }) {
 			aria-label='Zum Warenkorb hinzufügen'
 			className='btn btn-sm'
 			variant='primary'
-			style={{ padding: '0.625rem 1rem' }}
+			style={{ padding: '0.625rem 1rem', cursor: 'pointer' }}
 			aria-label='Fügt das Produkt zum Warenkorb'
 			onClick={onClick}
 		>

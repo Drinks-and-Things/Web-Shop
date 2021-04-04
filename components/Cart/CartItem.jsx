@@ -36,7 +36,7 @@ const CartItem = ({
 				</Row>
 				{customAttributes &&
 					customAttributes.map(({ key, value }) => (
-						<Row className='p-2 text-center '>
+						<Row key={key} className='p-2 text-center '>
 							<p className='mb-0'>
 								{key}: {value}
 							</p>
