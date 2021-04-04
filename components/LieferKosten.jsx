@@ -45,7 +45,7 @@ export default function LieferKosten() {
 							</Col>
 							<Col sm={11}>
 								<div>
-									<h2 className='text-danger'>Aktion bis 1.6</h2>
+									<h2 className='text-danger'>Aktion bis 1.6.2021</h2>
 									<div>Lieferkosten:</div>
 									<div>
 										<del className='text-danger'>20€</del> 10€: 1010, 1030,
