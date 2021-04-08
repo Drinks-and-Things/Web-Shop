@@ -11,6 +11,13 @@ import { DecrementButton, IncrementButton } from '@components/Buttons';
 import { formatNumber } from '@utils';
 import styles from './Shisha.module.scss';
 
+const imgDefault = {
+	width: '350px',
+	height: '520px',
+	defaultHeight: 2048,
+	defaultWidth: 1536,
+};
+
 export default function Shisha({
 	shopifyId,
 	name,
@@ -159,14 +166,28 @@ export default function Shisha({
 						<Row lg={12}>
 							{img && (
 								<Col lg={4} className='d-flex justify-content-center'>
-									<Image
-										priority='high'
-										loading='eager'
-										src={img}
-										alt={alt ? alt : `Bild von ${name}`}
-										height={height ? height : 350}
-										width={width ? width : 350}
-									/>
+									<div
+										style={{
+											display: 'flex',
+											margin: '0 auto 20px',
+											minWidth: 'px',
+											maxWidth: imgDefault.width,
+											maxWidth: imgDefault.width,
+											minHeight: imgDefault.height,
+											maxHeight: imgDefault.height,
+											justifyContent: 'center',
+										}}
+									>
+										<Image
+											priority='high'
+											loading='eager'
+											quality={100}
+											src={img}
+											alt={alt ? alt : `Bild von ${name}`}
+											height={height ? height : 2048}
+											width={width ? width : 1365}
+										/>
+									</div>
 								</Col>
 							)}
 							{description && (

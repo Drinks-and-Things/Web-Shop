@@ -7,6 +7,8 @@ import Page from '@components/Page';
 import useShopify from '@utils/hooks/useShopify.js';
 import { formatNumber } from '@utils';
 
+import styles from './Entertainment.module.scss';
+
 export default function Entertainment({ products, meta }) {
 	return (
 		<div className='mb-5 pt-1'>
@@ -49,26 +51,10 @@ function ProductCard({ slug, name, img, shopifyId, ...rest }) {
 
 	return (
 		<Card className='scale-hover-1_1'>
-			<div
-				style={{
-					display: 'block',
-					margin: '20px auto ',
-					maxHeight: '240px',
-					height: '240px',
-					maxWidth: '100%',
-					width: '215px',
-				}}
-			>
+			<div className={styles.image}>
 				<Link href={`/entertainment/${slug}`}>
 					<a>
-						<Image
-							decoding='async'
-							loading='lazy'
-							height='240'
-							width='215'
-							src={img}
-							alt={name}
-						/>
+						<Image loading='lazy' height='1365' width='2048' src={img} alt={name} />
 					</a>
 				</Link>
 			</div>

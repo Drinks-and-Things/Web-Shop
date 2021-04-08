@@ -26,11 +26,11 @@ import {
 } from '../Icons';
 
 export const navItems = [
-	{
-		href: home,
-		icon: HomeIcon,
-		child: 'Startseite',
-	},
+	// {
+	// 	href: home,
+	// 	icon: HomeIcon,
+	// 	child: 'Startseite',
+	// },
 	{
 		href: packages,
 		icon: DiskoballIcon,

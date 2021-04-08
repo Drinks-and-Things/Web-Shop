@@ -55,7 +55,9 @@ export async function getStaticProps({ params }) {
 		product: {
 			...product,
 			img: image && image.src,
-			alt: image && image.alt ? image.alt : products[i].alt,
+			alt: image && image.alt ? image.alt : product.imageAlt,
+			heigt: product.imgHeight && product.imgHeight,
+			width: product.imgWidth && product.imgWidth,
 			backHref: '/entertainment',
 		},
 		meta,

@@ -16,9 +16,9 @@ export default function Shisha({
 	shopifyId,
 	name,
 	img,
-	height,
 	alt,
-	width,
+	height = '1365',
+	width = '2048',
 	options,
 	description,
 	// price: staticPrice,
@@ -177,14 +177,26 @@ export default function Shisha({
 						<Row lg={12}>
 							{img && (
 								<Col lg={4} className='d-flex justify-content-center'>
-									<Image
-										priority='high'
-										loading='eager'
-										src={img}
-										alt={alt ? alt : `Bild von ${name}`}
-										height={height ? height : 350}
-										width={width ? width : 350}
-									/>
+									<div
+										style={{
+											display: 'flex',
+											margin: '0 auto 20px',
+											minWidth: width === '1365' ? '350px' : '520px',
+											maxWidth: width === '1365' ? '350px' : '520px',
+											minHeight: height === '1365' ? '350px' : '520px',
+											maxHeight: height === '1365' ? '350px' : '520px',
+											justifyContent: 'center',
+										}}
+									>
+										<Image
+											priority='high'
+											loading='eager'
+											src={img}
+											alt={alt ? alt : `Bild von ${name}`}
+											width={width === '1365' ? width : 2048}
+											height={height === '1365' ? height : 2048}
+										/>
+									</div>
 								</Col>
 							)}
 							{description && (

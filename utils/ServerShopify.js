@@ -43,7 +43,7 @@ export async function fetchMultipleNodes(ids) {
 		`,
 		{ ids: ids }
 	);
-	return data.nodes;
+	return data.nodes || [];
 }
 
 export async function fetchNode(id) {
@@ -61,5 +61,5 @@ export async function fetchNode(id) {
 		`
 	);
 
-	return data.node;
+	return data.node || {};
 }

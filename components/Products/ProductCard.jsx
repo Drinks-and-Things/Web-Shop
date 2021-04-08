@@ -14,8 +14,8 @@ import { InfoIcon } from '@components/Icons/index.js';
 import { Col } from 'react-bootstrap';
 
 const imgDefault = {
-	width: '180px',
-	height: '300px',
+	width: '250px',
+	height: '320px',
 	defaultHeight: 2048,
 	defaultWidth: 1536,
 };
@@ -57,12 +57,12 @@ const ProductCard = ({ product, img = imgDefault, ...props }) => {
 	useEffect(async () => {
 		if (data) {
 			const node = data.node;
-			setPrice(node.price.amount);
-			setAvailable(node.available);
+			setPrice(node?.price?.amount);
+			setAvailable(node?.available);
 			if (available === true && quantity === 0) {
 				setQuantity(100);
 			} else {
-				setQuantity(node.quantity);
+				setQuantity(node?.quantity);
 			}
 		}
 	}, [data]);
@@ -149,11 +149,10 @@ const ProductCard = ({ product, img = imgDefault, ...props }) => {
 						style={{
 							display: 'flex',
 							margin: '0 auto 10px',
-							minWidth: 'px',
+							// minWidth: img.width,
 							maxWidth: img.width,
 							minHeight: img.height,
 							maxHeight: img.height,
-							maxWidth: '100%',
 							justifyContent: 'center',
 						}}
 					>
@@ -193,31 +192,36 @@ const ProductCard = ({ product, img = imgDefault, ...props }) => {
 					<Col sm='12' className='p-0'>
 						<Card.Text className='h5'>{product.name}</Card.Text>
 					</Col>
-					<h3 className='text-left'>
-						{price === '--' ? '--' : formatNumber(price * amount)}
-					</h3>
 					{available === true ? (
-						<div className='text-right'>
-							<div
-								className='float-left'
-								style={{ display: 'inline-flex', width: '70%' }}
-							>
-								<DecrementButton setAmount={setAmount} amount={amount} />
-								<span className='prod__amount'>{amount}</span>
-								<IncrementButton
-									setAmount={setAmount}
-									amount={amount}
-									max={quantity}
-								/>
+						<>
+							<h3 className='text-left'>
+								{price === '--' ? '--' : formatNumber(price * amount)}
+							</h3>
+							<div className='text-right'>
+								<div
+									className='float-left'
+									style={{ display: 'inline-flex', width: '70%' }}
+								>
+									<DecrementButton setAmount={setAmount} amount={amount} />
+									<span className='prod__amount'>{amount}</span>
+									<IncrementButton
+										setAmount={setAmount}
+										amount={amount}
+										max={quantity}
+									/>
+								</div>
+								<CartButton onClick={handleAdd} />
 							</div>
-							<CartButton onClick={handleAdd} />
-						</div>
+						</>
 					) : (
 						<span
-							style={{ height: '38px' }}
-							className='d-flex justify-content-center align-items-center'
+							style={{
+								height: '38px',
+								margin: '20px 15px 15px 15px',
+							}}
+							className='d-flex justify-content-center align-items-center h5'
 						>
-							Nicht Lagernd
+							Derzeit nicht Lagernd
 						</span>
 					)}
 				</Card.Body>
