@@ -32,7 +32,7 @@ export async function getStaticProps() {
 	};
 
 	return {
-		props,
+		props: JSON.parse(JSON.stringify(props)),
 	};
 
 	async function getShishaImg(id) {
