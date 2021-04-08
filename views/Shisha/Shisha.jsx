@@ -179,6 +179,7 @@ export default function Shisha({
 										}}
 									>
 										<Image
+											unoptimized={true}
 											priority='high'
 											loading='eager'
 											quality={100}

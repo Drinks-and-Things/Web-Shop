@@ -191,6 +191,7 @@ export default function Shisha({
 										<Image
 											priority='high'
 											loading='eager'
+											unoptimized={true}
 											src={img}
 											alt={alt ? alt : `Bild von ${name}`}
 											width={width === '1365' ? width : 2048}

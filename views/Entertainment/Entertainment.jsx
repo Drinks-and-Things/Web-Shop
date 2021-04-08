@@ -54,7 +54,14 @@ function ProductCard({ slug, name, img, shopifyId, ...rest }) {
 			<div className={styles.image}>
 				<Link href={`/entertainment/${slug}`}>
 					<a>
-						<Image loading='lazy' height='1365' width='2048' src={img} alt={name} />
+						<Image
+							unoptimized={true}
+							loading='lazy'
+							height='1365'
+							width='2048'
+							src={img}
+							alt={name}
+						/>
 					</a>
 				</Link>
 			</div>
