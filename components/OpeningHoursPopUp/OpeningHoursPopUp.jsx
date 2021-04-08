@@ -22,6 +22,9 @@ export default function OpeningHoursPopUp() {
 	}
 
 	useEffect(() => {
+		if (navigator.standalone) {
+			return;
+		}
 		const hours = sessionStorage.getItem('openingHours')
 			? sessionStorage.getItem('openingHours')
 			: true;
@@ -34,7 +37,7 @@ export default function OpeningHoursPopUp() {
 				<Modal
 					isOpen={open}
 					onRequestClose={() => {
-						setModalShow(false);
+						setOpen(false);
 					}}
 					closeTimeoutMS={500}
 					style={customStyles}

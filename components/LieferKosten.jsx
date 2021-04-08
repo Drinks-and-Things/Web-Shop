@@ -11,6 +11,9 @@ export default function LieferKosten() {
 	}
 
 	useEffect(() => {
+		if (navigator.standalone) {
+			return;
+		}
 		const sale = sessionStorage.getItem('openingSale')
 			? sessionStorage.getItem('openingSale')
 			: true;
@@ -26,13 +29,14 @@ export default function LieferKosten() {
 						color: '#fff',
 						padding: '10px',
 						display: 'flex',
+						paddingTop: 0,
 						// flexDirection: 'row-reverse',
 					}}
 					className='slide-in'
 				>
 					<Container>
 						<Row className='flex-row-reverse'>
-							<Col sm={1} className='align-content-center align-self-center'>
+							<Col sm={1} className='align-content-center align-self-center p-0'>
 								<button
 									type='button'
 									onClick={() => {
@@ -43,10 +47,10 @@ export default function LieferKosten() {
 									<XIcon />
 								</button>
 							</Col>
-							<Col sm={11}>
+							<Col sm={11} className='p-0 pt-1'>
 								<div>
 									<h2 className='text-danger'>Aktion bis 1.6.2021</h2>
-									<div>Lieferkosten:</div>
+									<div>Kostenlose Lieferung ab Mindestbestellwert:</div>
 									<div>
 										<del className='text-danger'>20€</del> 10€: 1010, 1030,
 										1040, 1050, 1060, 1100, 1110

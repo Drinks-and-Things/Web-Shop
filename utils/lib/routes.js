@@ -11,6 +11,9 @@ export const beer = '/bier';
 
 export const shisha = '/shisha';
 export const entertainment = '/entertainment';
+
+export const extras = '/extras';
+
 export const contact = '/kontakt';
 export const impressum = '/impressum';
 export const agb = '/geschaftsbedingungen';

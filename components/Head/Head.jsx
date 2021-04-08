@@ -9,7 +9,7 @@ export default function MyHead({
 	handle = '',
 	children,
 }) {
-	const siteUrl = 'drinksundthings.at';
+	const siteUrl = 'drinkgsandthings.wien';
 
 	return (
 		<Head>

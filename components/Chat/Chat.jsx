@@ -17,9 +17,9 @@ export default function Chat({ className, footerVisible, ...rest }) {
 		if (navigator.share) {
 			try {
 				await navigator.share({
-					title: `Drinks and Things | drinksundthings.at`,
-					text: `Check out Drinks and Things on drinksundthings.at`,
-					url: 'drinksundthings.at',
+					title: `Drinks and Things | drinkgsandthings.wien`,
+					text: `Check out Drinks and Things on drinkgsandthings.wien`,
+					url: 'drinkgsandthings.wien',
 				});
 				console.log('Successfully shared');
 			} catch (error) {

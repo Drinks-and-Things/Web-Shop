@@ -20,7 +20,7 @@ const MyNav = ({ color = '#fff', width = '25px', toggleSidebar, entertainment, d
 					/>
 				) : (
 					<Nav.Item as='li' key={href}>
-						<Link href={href} passHref>
+						<Link href={href} passHref prefetch={false}>
 							<Nav.Link>
 								<Icon color={color} width={width} />
 								{child}

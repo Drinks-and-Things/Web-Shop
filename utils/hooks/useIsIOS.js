@@ -25,21 +25,23 @@ function checkForIOS() {
 	const days = dayjs(today).diff(lastPrompt, 'days');
 
 	const ua = window.navigator.userAgent;
-	const isApple = ['iPhone', 'iPad', 'iPod'].includes(navigator.platform);
+	// const isApple = ['iPhone', 'iPad', 'iPod'].includes(navigator.platform);
 	const isIPad = !!ua.match(/iPad/i);
 	const isIPhone = !!ua.match(/iPhone/i);
 	const isIOS = isIPad || isIPhone;
 	// const webkit = !!ua.match(/WebKit/i);
 	// const isSafari = isIOS && webkit && !ua.match(/CriOS/i);
+	const webkit = ua.indexOf('Safari') !== 1 && ua.indexOf('Chrome') === -1 ? true : false;
+	const isSafari = isIOS && webkit;
 
-	const prompt = (isNaN(days) || days > 30) && (isIOS || isApple); //&& isSafari
+	const prompt = (isNaN(days) || days > 30) && isSafari; //isIOS //(isIOS || isApple);
 
 	if (prompt && 'localStorage' in window) {
 		localStorage.setItem('installPrompt', today);
 	}
 
 	//return { isIOS, isSafari, prompt };
-	return { isIOS, prompt };
+	return { isIOS, prompt, isSafari };
 }
 
 // const myDate = new Date();

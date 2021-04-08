@@ -7,7 +7,7 @@ import { getHomepage } from '@utils/Contentful';
 import { fetchMultipleNodes, fetchNode } from '@utils';
 
 const Home = ({ preview, products, home }) => {
-	const { prompt } = useIsIOS();
+	const { prompt, isSafari } = useIsIOS();
 	// console.log(prompt);
 
 	return (
@@ -44,7 +44,6 @@ export async function getStaticProps({ preview = false }) {
 	// }
 	let productCarousel = [];
 	const HomepageData = await getHomepage();
-
 	for (let i = 0; i < HomepageData.productCarousel.length; i++) {
 		const { image } = (await fetchNode(HomepageData.productCarousel[i].fields.shopifyId)) || {};
 		productCarousel.push({

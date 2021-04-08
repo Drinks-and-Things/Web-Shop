@@ -13,7 +13,14 @@ import DescriptionDialog from '@components/DescriptionDialog/DescriptionDialog.j
 import { InfoIcon } from '@components/Icons/index.js';
 import { Col } from 'react-bootstrap';
 
-const ProductCard = ({ product, ...props }) => {
+const imgDefault = {
+	width: '180px',
+	height: '300px',
+	defaultHeight: 2048,
+	defaultWidth: 1536,
+};
+
+const ProductCard = ({ product, img = imgDefault, ...props }) => {
 	const query = `
 	{
 		node(id: "${product.shopifyId}") {
@@ -142,10 +149,10 @@ const ProductCard = ({ product, ...props }) => {
 						style={{
 							display: 'flex',
 							margin: '0 auto 10px',
-							minWidth: '225px',
-							maxWidth: '225px',
-							minHeight: '300px',
-							maxHeight: '300px',
+							minWidth: 'px',
+							maxWidth: img.width,
+							minHeight: img.height,
+							maxHeight: img.height,
 							maxWidth: '100%',
 							justifyContent: 'center',
 						}}
@@ -155,8 +162,8 @@ const ProductCard = ({ product, ...props }) => {
 								unoptimized={true}
 								// quality={100}
 								loading='lazy'
-								height='300'
-								width='215'
+								height={img.defaultHeight}
+								width={img.defaultWidth}
 								src={product.img}
 								alt={product.alt}
 							/>

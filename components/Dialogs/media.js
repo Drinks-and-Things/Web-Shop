@@ -5,14 +5,14 @@ export const socialMedia = [
 		name: 'Facebook',
 		icon: FacebookIcon,
 		width: '20px',
-		href: 'https://www.facebook.com/sharer.php?u=http%3A%2F%2F.drinksundthings.at%2F',
+		href: 'https://www.facebook.com/sharer.php?u=http%3A%2F%2F.drinkgsandthings.wien%2F',
 	},
 	{
 		name: 'Twitter',
 		icon: TwitterIcon,
 		width: '20px',
 		href:
-			'https://twitter.com/intent/tweet?url=http%3A%2F%2F.drinksundthings.at%2F&hashtags=drinks,snacks',
+			'https://twitter.com/intent/tweet?url=http%3A%2F%2F.drinkgsandthings.wien%2F&hashtags=drinks,snacks',
 	},
 	{
 		name: 'Instagram',

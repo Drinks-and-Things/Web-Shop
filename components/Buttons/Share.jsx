@@ -10,9 +10,9 @@ const Share = () => {
 		if (navigator.share) {
 			try {
 				await navigator.share({
-					title: `Drinks and Things | drinksundthings.at`,
-					text: `Schau dir Drinks and Things auf drinksundthings.at an`,
-					url: 'drinksundthings.at',
+					title: `Drinks and Things | drinkgsandthings.wien`,
+					text: `Schau dir Drinks and Things auf drinkgsandthings.wien an`,
+					url: 'drinkgsandthings.wien',
 				});
 				console.log('Successfully shared');
 			} catch (error) {

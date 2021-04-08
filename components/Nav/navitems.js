@@ -6,11 +6,12 @@ import {
 	shisha,
 	snacks,
 	entertainment,
-	alkDrinks,
+	// alkDrinks,
 	alkFreeDrinks,
 	beer,
 	spirituosen,
 	wine,
+	extras,
 } from '@lib/routes';
 
 import {
@@ -21,6 +22,7 @@ import {
 	ChipsCookiesIcon,
 	ControllerIcon,
 	DiskoballIcon,
+	AddIcon,
 } from '../Icons';
 
 export const navItems = [
@@ -59,6 +61,11 @@ export const navItems = [
 		href: entertainment,
 		icon: ControllerIcon,
 		child: 'Entertainment',
+	},
+	{
+		href: extras,
+		icon: AddIcon,
+		child: 'Extras',
 	},
 ];
 

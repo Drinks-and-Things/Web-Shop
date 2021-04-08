@@ -9,6 +9,9 @@ const customStyles = {
 		right: 'auto',
 		bottom: 'auto',
 		marginRight: '-50%',
+		backgroundColor: 'transparent',
+		border: 'none',
+		paddingTop: '40px',
 		// transform: 'translate(-50%, -50%)',
 	},
 };
@@ -32,7 +35,10 @@ export default function InstallPrompt({ ...props }) {
 			style={customStyles}
 			contentLabel='Beschreibung des Produktes'
 		>
-			<div className='align-content-center p-4 '>
+			<div
+				className='align-content-center p-3'
+				style={{ backgroundColor: 'white', borderRadius: '4px' }}
+			>
 				<div style={{ marginTop: '-50px' }} className='text-center'>
 					<img
 						src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/95x95.png?v=1617407618'
@@ -47,7 +53,7 @@ export default function InstallPrompt({ ...props }) {
 				<div className='mt-3 text-center'>
 					<h3>Installiere Jetzt Drinks and Things!</h3>
 				</div>
-				<p className='h5 text-muted text-center mt-0'>
+				<p className='h5 text-center mt-3'>
 					Installiere diese WebApp auf deinem Home-Bildschirm für ein besseres Erlebnis.
 				</p>
 				<div className='text-center pt-2'>
@@ -63,8 +69,9 @@ export default function InstallPrompt({ ...props }) {
 							loading='lazy'
 							decoding='async'
 						/>
-						und dann &quot;Zum Home-Bildschirm{' '}
-						<img
+						und dann &quot;Zum Home-Bildschirm
+						{/* {' '} */}
+						{/* <img
 							src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/QuickActions_Add.png?v=1617414289'
 							style={{ margin: '0 4px 4px' }}
 							className='inline-block'
@@ -73,7 +80,7 @@ export default function InstallPrompt({ ...props }) {
 							width='10'
 							loading='lazy'
 							decoding='async'
-						/>
+						/> */}
 						&quot;
 					</p>
 				</div>

@@ -25,9 +25,9 @@ export default function Contact() {
 									<a
 										itemProp='mail'
 										dir='ltr'
-										href='mailto:office@drinksundthings.at'
+										href='mailto:office@drinkgsandthings.wien'
 									>
-										office@drinksundthings.at
+										office@drinkgsandthings.wien
 									</a>
 								</li>
 							</ul>

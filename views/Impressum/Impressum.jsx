@@ -7,7 +7,7 @@ import Page from '@components/Page';
 
 export default function Impressum() {
 	return (
-		<Page title='Impressum' metaTitle='Impressum - drinksundthings.at'>
+		<Page title='Impressum' metaTitle='Impressum - drinkgsandthings.wien'>
 			<Container>
 				<div className='text-center font-weight-bold'>
 					{/* <h1 className='font-weight-bold'>IMPRESSUM</h1> */}
@@ -25,7 +25,7 @@ export default function Impressum() {
 						<a href='tel:+436608519007'>+43 681 840 72 005</a>
 					</h5>
 					<h5>
-						<a href='mailto:office@zustell-bar.at'>office@drinksundthings.at</a>
+						<a href='mailto:office@zustell-bar.at'>office@drinkgsandthings.wien</a>
 					</h5>
 				</div>
 			</Container>

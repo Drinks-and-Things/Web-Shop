@@ -21,7 +21,7 @@
 // export { default as Twitter } from './Twitter';
 // export { default as Trash } from './Trash';
 // export { default as X } from './X';
-
+export { default as AddIcon } from './Add';
 export { default as BeerIcon } from './Beer';
 export { default as CartIcon } from './Cart';
 export { default as ChipsCookiesIcon } from './Chips-Cookies';

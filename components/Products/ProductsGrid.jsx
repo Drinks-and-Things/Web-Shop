@@ -3,7 +3,7 @@ import ProductCard from './ProductCard';
 import styles from './ProductsGrid.module.scss';
 import { Row, Col } from 'react-bootstrap';
 
-const ProductsGrid = ({ products }) => {
+const ProductsGrid = ({ products, img }) => {
 	return (
 		<>
 			<Row>
@@ -33,7 +33,7 @@ const ProductsGrid = ({ products }) => {
 			</Row>
 			<div className={styles.p__grid}>
 				{products?.map((product) => (
-					<ProductCard key={product.shopifyId} product={product} />
+					<ProductCard img={img} key={product.shopifyId} product={product} />
 				))}
 			</div>
 		</>
