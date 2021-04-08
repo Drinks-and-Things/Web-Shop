@@ -31,10 +31,10 @@ function checkForIOS() {
 	const isIOS = isIPad || isIPhone;
 	// const webkit = !!ua.match(/WebKit/i);
 	// const isSafari = isIOS && webkit && !ua.match(/CriOS/i);
-	const webkit = ua.indexOf('Safari') !== 1 && ua.indexOf('Chrome') === -1 ? true : false;
+	const webkit = ua.indexOf('Safari') === 1 && ua.indexOf('Chrome') === -1 ? true : false;
 	const isSafari = isIOS && webkit;
 
-	const prompt = (isNaN(days) || days > 30) && isSafari; //isIOS //(isIOS || isApple);
+	const prompt = (isNaN(days) || days > 14) && isSafari; //isIOS //(isIOS || isApple);
 
 	if (prompt && 'localStorage' in window) {
 		localStorage.setItem('installPrompt', today);

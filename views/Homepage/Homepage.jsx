@@ -17,12 +17,12 @@ const responsive = {
 		items: 3,
 	},
 	tablet: {
-		breakpoint: { max: 992, min: 770 },
+		breakpoint: { max: 992, min: 765 },
 		items: 2,
 		swipeable: true,
 	},
 	mobile_tablet: {
-		breakpoint: { max: 770, min: 576 },
+		breakpoint: { max: 765, min: 576 },
 		items: 1,
 		partialVisibilityGutter: 200,
 		swipeable: true,
