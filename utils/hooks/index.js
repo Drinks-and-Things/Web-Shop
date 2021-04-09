@@ -2,6 +2,7 @@ export { default as useOutsideClick } from './useOutsideClick';
 export { default as useShopifyGQ } from './useShopifyGQ';
 export { default as useShopify } from './useShopify';
 export { default as useIsIOS } from './useIsIOS';
+export { default as useIsStandalone } from './useIsStandalone';
 export { default as usePortal } from './usePortal';
 
 export { default as useStaticShopify } from './useStaticShopify';

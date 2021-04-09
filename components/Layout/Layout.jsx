@@ -5,15 +5,14 @@ import Nav from '../Nav';
 import Navbar from '../Navbar';
 import CartPage from '@components/Cart/CartPage';
 import { useOutsideClick } from '@utils/hooks';
-import { useUser } from '@contexts/UserContext';
+// import { useUser } from '@contexts/UserContext';
 import { Footer } from '../Footer';
 import { Chat } from '../Chat';
 import { Sidebar } from '@components/Sidebar';
 import s from './Layout.module.scss';
-import OpeningHoursPopUp from '@components/OpeningHoursPopUp';
 
 export default function Layout({ children, entertainment }) {
-	const [accpted, setAccepted] = useUser();
+	// const [accpted, setAccepted] = useUser();
 	const [cartOpened, setCartOpened] = useState(false);
 	const [sidebarOpened, setSidebarOpened] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
@@ -35,10 +34,10 @@ export default function Layout({ children, entertainment }) {
 		}
 	});
 
-	useEffect(() => {
-		const plz = sessionStorage.getItem('plz') ? sessionStorage.getItem('plz') : null;
-		if (plz !== null) setAccepted(true);
-	}, []);
+	// useEffect(() => {
+	// 	const plz = sessionStorage.getItem('plz') ? sessionStorage.getItem('plz') : null;
+	// 	if (plz !== null) setAccepted(true);
+	// }, []);
 
 	useEffect(() => {
 		document.body.classList.toggle('drawer-open', isOpen);
@@ -102,7 +101,6 @@ export default function Layout({ children, entertainment }) {
 				<main>{children}</main>
 				<Footer />
 			</div>
-			<OpeningHoursPopUp />
 		</>
 	);
 }

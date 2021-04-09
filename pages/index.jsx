@@ -2,17 +2,22 @@ import React from 'react';
 import Homepage from '../views/Homepage';
 import InstallPrompt from '@components/InstallPrompt/IOS';
 // import { getProducts } from '@utils/data/products';
-import { useIsIOS } from '@utils/hooks';
+import { useIsIOS, useIsStandalone } from '@utils/hooks';
 import { getHomepage } from '@utils/Contentful';
-import { fetchMultipleNodes, fetchNode } from '@utils';
+import { fetchNode } from '@utils';
+import OpeningHoursPopUp from '@components/OpeningHoursPopUp';
 
 const Home = ({ preview, products, home }) => {
 	const { prompt, isSafari } = useIsIOS();
+	const isStandalone = useIsStandalone();
 	// console.log(prompt);
+	console.log(!isStandalone);
 
 	return (
 		<>
 			{prompt && <InstallPrompt />}
+			{!isStandalone && <OpeningHoursPopUp />}
+
 			<Homepage
 				{...home}
 				// products={products}

@@ -1,3 +1,4 @@
+import { resolveHref } from 'next/dist/next-server/lib/router/router';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-modal';
@@ -15,16 +16,16 @@ const customStyles = {
 
 export default function OpeningHoursPopUp() {
 	const [open, setOpen] = useState(false);
+	const [transition, setTransition] = useState(true);
 
 	async function saveAction() {
 		sessionStorage.setItem('openingHours', false);
+		setTransition(false);
+		await new Promise((resolve) => setTimeout(resolve, 600));
 		setOpen(false);
 	}
 
 	useEffect(() => {
-		if (navigator.standalone) {
-			return;
-		}
 		const hours = sessionStorage.getItem('openingHours')
 			? sessionStorage.getItem('openingHours')
 			: true;
@@ -35,7 +36,7 @@ export default function OpeningHoursPopUp() {
 		<>
 			{open === true && (
 				<Modal
-					isOpen={open}
+					isOpen={transition}
 					onRequestClose={() => {
 						setOpen(false);
 					}}

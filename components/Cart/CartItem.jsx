@@ -13,7 +13,7 @@ const CartItem = ({
 	customAttributes,
 }) => {
 	return (
-		<Row>
+		<Row style={{ flexWrap: 'unset' }}>
 			<Col sm='4' className='p-2'>
 				{variant.image && (
 					<img

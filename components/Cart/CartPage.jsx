@@ -76,7 +76,9 @@ const CartPage = forwardRef(({ opened, close }, ref) => {
 									<h3 className='m-0 txt-right'>{checkout.totalPrice}</h3>
 									{/* <h3 className='m-0 txt-right'>{formatNumber(total)}</h3> */}
 									<hr className='my-4' />
-									{checkSum() === false && <p>Mindestbestellwert beträgt 10€</p>}
+									{checkSum() === false && (
+										<p>Mindestbestellwert beträgt 10€/25€</p>
+									)}
 									<div className='text-center'>
 										<a
 											aria-disabled={checkSum() !== true ? 'true' : 'false'}
