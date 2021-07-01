@@ -10,7 +10,6 @@ const MyNavbar = ({ toggleSidebar, toggleCart, children }) => {
 	return (
 		<header className={styles.header}>
 			<LieferKosten />
-
 			<Navbar
 				bg='primary'
 				expand='xl'

@@ -49,15 +49,17 @@ export default function LieferKosten() {
 							</Col>
 							<Col sm={11} className='p-0 pt-1'>
 								<div>
-									<h2 className='text-danger'>Aktion bis 1.6.2021</h2>
+									{/* <h2 className='text-danger'>Aktion bis 1.6.2021</h2> */}
 									<div>Kostenlose Lieferung ab Mindestbestellwert:</div>
 									<div>
-										<del className='text-danger'>20€</del> 10€: 1010, 1030,
-										1040, 1050, 1060, 1100, 1110
+										20€: 1010, 1030, 1040, 1050, 1060, 1100, 1110
+										{/* <del className='text-danger'>20€</del> 10€: 1010, 1030,
+										1040, 1050, 1060, 1100, 1110 */}
 									</div>
 									<div>
-										<del className='text-danger'>45€</del> 25€: Alle anderen
-										Bezirke
+										45€: Alle anderen Bezirke
+										{/* <del className='text-danger'>45€</del> 25€: Alle anderen
+										Bezirke */}
 									</div>
 								</div>
 							</Col>
