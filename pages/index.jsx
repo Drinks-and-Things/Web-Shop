@@ -5,7 +5,8 @@ import InstallPrompt from '@components/InstallPrompt/IOS';
 import { useIsIOS, useIsStandalone } from '@utils/hooks';
 import { getHomepage } from '@utils/Contentful';
 import { fetchNode } from '@utils';
-import OpeningHoursPopUp from '@components/OpeningHoursPopUp';
+// import { OpeningHoursPopUp } from '@components/Promos';
+import { NewOpeningPopUp } from '@components/Promos';
 
 const Home = ({ preview, products, home }) => {
 	const { prompt, isSafari } = useIsIOS();
@@ -16,7 +17,8 @@ const Home = ({ preview, products, home }) => {
 	return (
 		<>
 			{prompt && <InstallPrompt />}
-			{!isStandalone && <OpeningHoursPopUp />}
+			{/* {!isStandalone && <OpeningHoursPopUp />} */}
+			<NewOpeningPopUp />
 
 			<Homepage
 				{...home}
@@ -28,25 +30,6 @@ const Home = ({ preview, products, home }) => {
 };
 
 export async function getStaticProps({ preview = false }) {
-	// const { createClient } = require('contentful');
-	// const contentful = createClient({
-	// 	space: process.env.CONTENTFUL_SPACE_ID,
-	// 	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-	// });
-
-	// for (let i = 0; i < HomepageData.productCarousel.length; i++) {
-	// 	const { image } = await fetchNode(HomepageData.productCarousel[i].fields.shopifyId);
-	// 	const optionId = HomepageData.productCarousel[i].fields?.options;
-	// 	const options = optionId && contentful.getEntry(optionId);
-	// 	console.log(optionId);
-	// 	console.log(options);
-	// 	productCarousel.push({
-	// 		...HomepageData.productCarousel[i].fields,
-	// 		img: image && image.src,
-	// 		alt: image && image.alt,
-	// 		options: options && options,
-	// 	});
-	// }
 	let productCarousel = [];
 	const HomepageData = await getHomepage();
 	for (let i = 0; i < HomepageData.productCarousel.length; i++) {
@@ -54,7 +37,7 @@ export async function getStaticProps({ preview = false }) {
 		productCarousel.push({
 			...HomepageData.productCarousel[i].fields,
 			img: image && image.src,
-			alt: image && image.alt,
+			alt: image && image.alt
 		});
 	}
 
@@ -68,8 +51,8 @@ export async function getStaticProps({ preview = false }) {
 			cta: HomepageData.callToAction,
 			products: productCarousel,
 			bgImage: HomepageData.bgImage.fields.file.url,
-			alt: HomepageData.bgImage.fields.title,
-		},
+			alt: HomepageData.bgImage.fields.title
+		}
 	};
 
 	// const products = await getProducts();
@@ -79,7 +62,7 @@ export async function getStaticProps({ preview = false }) {
 		// 	products,
 		// 	preview,
 		// },
-		props: JSON.parse(JSON.stringify(props)),
+		props: JSON.parse(JSON.stringify(props))
 	};
 }
 
