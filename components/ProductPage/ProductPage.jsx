@@ -24,7 +24,7 @@ export default function Shisha({
 	// price: staticPrice,
 	// available: staticAvailable,
 	// quantity: staticQuantity,
-	meta,
+	meta
 }) {
 	const query = `
 		{
@@ -62,7 +62,7 @@ export default function Shisha({
 			return obj;
 		}, {});
 
-		setselectedOptions(current);
+		setselectedOptions(current || {});
 	}, []);
 
 	useEffect(async () => {
@@ -83,10 +83,10 @@ export default function Shisha({
 		let toastId;
 		try {
 			const customAttributes =
-				selectedOptions !== {}
+				Object.keys(selectedOptions).length !== 0
 					? Object.entries(selectedOptions).map(([key, value]) => ({
 							key,
-							value,
+							value
 					  }))
 					: [];
 
@@ -100,7 +100,7 @@ export default function Shisha({
 			await addProductToCart({
 				variantId: shopifyId,
 				quantity: amount,
-				customAttributes,
+				customAttributes
 			});
 
 			setAdding(false);
@@ -164,7 +164,7 @@ export default function Shisha({
 										<span
 											style={{
 												fontSize: '1.8em',
-												marginRight: '3px',
+												marginRight: '3px'
 											}}
 										>
 											&#8592;
@@ -181,11 +181,13 @@ export default function Shisha({
 										style={{
 											display: 'flex',
 											margin: '0 auto 20px',
-											minWidth: width === '1365' ? '350px' : '520px',
-											maxWidth: width === '1365' ? '350px' : '520px',
-											minHeight: height === '1365' ? '350px' : '520px',
-											maxHeight: height === '1365' ? '350px' : '520px',
-											justifyContent: 'center',
+											width: width === '1365' ? '350' : '520',
+											height: height === '1365' ? '350' : '520',
+											// minWidth: width === '1365' ? '350px' : '520px',
+											// maxWidth: width === '1365' ? '350px' : '520px',
+											// minHeight: height === '1365' ? '350px' : '520px',
+											// maxHeight: height === '1365' ? '350px' : '520px',
+											justifyContent: 'center'
 										}}
 									>
 										<Image
@@ -232,7 +234,7 @@ export default function Shisha({
 																	option && 'active'
 															}
 															style={{
-																margin: '.25em',
+																margin: '.25em'
 															}}
 															onClick={() =>
 																selectOption(fields.name, option)
