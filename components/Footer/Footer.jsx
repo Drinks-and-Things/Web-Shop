@@ -14,7 +14,7 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 	return (
 		<footer
 			style={{
-				position: 'relative',
+				position: 'relative'
 			}}
 		>
 			<Image
@@ -83,7 +83,7 @@ function Logo() {
 		<div
 			style={{
 				display: 'flex',
-				justifyContent: 'center',
+				justifyContent: 'center'
 			}}
 		>
 			<div
@@ -91,12 +91,12 @@ function Logo() {
 					minWidth: '150px',
 					minHeight: '150px',
 					maxWidth: '150px',
-					maxHeight: '150px',
+					maxHeight: '150px'
 				}}
 			>
 				<Image
 					src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/194x194.png?v=1617444693'
-					alt='Logo'
+					alt='Logo unseres Shops'
 					loading='eager'
 					quality={100}
 					width={194}
