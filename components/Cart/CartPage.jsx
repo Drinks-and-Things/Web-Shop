@@ -22,7 +22,7 @@ const CartPage = forwardRef(({ opened, close }, ref) => {
 	}
 
 	function checkSum() {
-		if (checkout.totalPrice > 10) {
+		if (checkout.totalPrice > 20) {
 			return true;
 		}
 		return false;
@@ -81,6 +81,8 @@ const CartPage = forwardRef(({ opened, close }, ref) => {
 									)}
 									<div className='text-center'>
 										<a
+											role='button'
+											rel='ugc nofollow'
 											aria-disabled={checkSum() !== true ? 'true' : 'false'}
 											href={checkout.webUrl}
 											className={`btn btn-primary mb-2 ${
