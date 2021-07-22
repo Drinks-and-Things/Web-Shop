@@ -3,13 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from 'react-bootstrap/Navbar';
 import { Cart } from '../Cart';
-import LieferKosten from '@components/LieferKosten';
+import { Vacation } from '@components/Promos';
 import styles from './Navbar.module.scss';
 
 const MyNavbar = ({ toggleSidebar, toggleCart, children }) => {
 	return (
 		<header className={styles.header}>
-			<LieferKosten />
+			<Vacation />
 			<Navbar
 				bg='primary'
 				expand='xl'
@@ -41,7 +41,7 @@ function Logo() {
 		<div
 			style={{
 				display: 'flex',
-				justifyContent: 'center',
+				justifyContent: 'center'
 			}}
 		>
 			<div
@@ -49,7 +49,7 @@ function Logo() {
 					minWidth: '95px',
 					minHeight: '95px',
 					maxWidth: '95px',
-					maxHeight: '95px',
+					maxHeight: '95px'
 				}}
 			>
 				<Image
