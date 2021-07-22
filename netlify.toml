@@ -1,0 +1,14 @@
+[build]
+    command = "npm run build && npm run postbuild"
+    publish = "out"
+
+[[plugins]]
+    package = "@netlify/plugin-nextjs"
+[[plugins]]
+    package = "netlify-plugin-cache-nextjs"
+# [[plugins]]
+#     package = "@netlify/plugin-sitemap"
+#         [plugins.inputs]
+#         baseUrl = "drinksandthings.wien"
+#         changeFreq = "monthly"
+#         buildDir = "out"
