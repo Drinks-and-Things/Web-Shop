@@ -1,28 +1,31 @@
 const withPWA = require('next-pwa');
 const runtimeCaching = require('next-pwa/cache');
-// const withBundleAnalyzer = require('@next/bundle-analyzer')({
-// 	enabled: process.env.ANALYZE === 'true',
-// });
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true'
+});
 
 module.exports = withPWA({
 	target: 'serverless',
 	pwa: {
 		disable: process.env.NODE_ENV === 'development',
 		dest: 'public',
-		runtimeCaching,
+		runtimeCaching
 	},
 	images: {
-		// domains: process.env.NODE_ENV === 'development' && [
-		// 	'cdn.shopify.com',
-		// 	'images.ctfassets.net',
-		// ],
-		https: true,
+		domains: process.env.NODE_ENV === 'development' && [
+			'cdn.shopify.com',
+			'images.ctfassets.net'
+		],
+		https: true
+	},
+	future: {
+		webpack5: true
 	},
 	webpack: (config, { isServer }) => {
 		// Fixes npm packages that depend on `fs` module
 		if (!isServer) {
 			config.node = {
-				fs: 'empty',
+				fs: 'empty'
 			};
 		}
 
@@ -36,12 +39,12 @@ module.exports = withPWA({
 				headers: [
 					{
 						key: 'Cache-Control',
-						value: 'public, max-age=9999999999, must-revalidate',
-					},
-				],
-			},
+						value: 'public, max-age=9999999999, must-revalidate'
+					}
+				]
+			}
 		];
-	},
+	}
 });
 // module.exports = {
 // 	target: 'serverless',
