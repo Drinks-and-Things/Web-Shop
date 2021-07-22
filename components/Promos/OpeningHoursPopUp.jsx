@@ -1,4 +1,3 @@
-import { resolveHref } from 'next/dist/next-server/lib/router/router';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-modal';
@@ -9,9 +8,9 @@ const customStyles = {
 		left: '50%',
 		right: 'auto',
 		bottom: 'auto',
-		marginRight: '-50%',
+		marginRight: '-50%'
 		// transform: 'translate(-50%, -50%)',
-	},
+	}
 };
 
 export default function OpeningHoursPopUp() {

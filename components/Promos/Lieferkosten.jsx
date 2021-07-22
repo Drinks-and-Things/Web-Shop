@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { XIcon } from './Icons';
+import { XIcon } from '../Icons';
 
-export default function LieferKosten() {
+export default function Lieferkosten() {
 	const [open, setOpen] = useState(false);
 
 	async function saveAktion() {
@@ -29,7 +29,7 @@ export default function LieferKosten() {
 						color: '#fff',
 						padding: '10px',
 						display: 'flex',
-						paddingTop: 0,
+						paddingTop: 0
 						// flexDirection: 'row-reverse',
 					}}
 					className='slide-in'
