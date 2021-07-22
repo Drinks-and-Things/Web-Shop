@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import GoogleTagManager from '@components/GoogleTagManager';
-import { CartContextProvider, OptionsProvider, UserProvider } from '../contexts';
+import { CartContextProvider, UserProvider } from '../contexts';
 import { Layout } from '../components/Layout';
 import '../styles/default.scss';
 // import OptionsDialog from '@components/OptionsDialog';
