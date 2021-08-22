@@ -55,7 +55,7 @@ export default function NewOpeningPopUp() {
 					<div className={`text-center bold`}>
 						<h1 className='mb-3'>Neueröffnung</h1>
 						<section>
-							<h2>Ab dem 2.8 liefern wir auch in folgenden Gebieten: </h2>
+							<h2>Wir liefern jetzt auch in folgenden Gebieten: </h2>
 							<ul className={styles.gebiete}>
 								{gebiete.map((gebiet) => (
 									<li className='h5'>{gebiet}</li>
