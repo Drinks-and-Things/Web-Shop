@@ -9,7 +9,7 @@ import styles from './Navbar.module.scss';
 const MyNavbar = ({ toggleSidebar, toggleCart, children }) => {
 	return (
 		<header className={styles.header}>
-			<Vacation />
+			// <Vacation />
 			<Navbar
 				bg='primary'
 				expand='xl'
