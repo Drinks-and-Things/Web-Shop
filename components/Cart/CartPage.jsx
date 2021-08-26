@@ -77,7 +77,7 @@ const CartPage = forwardRef(({ opened, close }, ref) => {
 									{/* <h3 className='m-0 txt-right'>{formatNumber(total)}</h3> */}
 									<hr className='my-4' />
 									{checkSum() === false && (
-										<p>Mindestbestellwert beträgt 10€/25€</p>
+										<p>Mindestbestellwert beträgt 20€</p>
 									)}
 									<div className='text-center'>
 										<a
