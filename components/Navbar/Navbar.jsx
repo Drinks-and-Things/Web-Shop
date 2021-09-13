@@ -3,13 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from 'react-bootstrap/Navbar';
 import { Cart } from '../Cart';
-import { Vacation } from '@components/Promos';
 import styles from './Navbar.module.scss';
 
 const MyNavbar = ({ toggleSidebar, toggleCart, children }) => {
 	return (
 		<header className={styles.header}>
-			// <Vacation />
 			<Navbar
 				bg='primary'
 				expand='xl'
