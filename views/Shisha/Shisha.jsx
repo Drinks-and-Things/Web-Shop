@@ -12,10 +12,10 @@ import { formatNumber } from '@utils';
 import styles from './Shisha.module.scss';
 
 const imgDefault = {
-	width: '350px',
-	height: '520px',
-	defaultHeight: 2048,
-	defaultWidth: 1536,
+	width: '180px',
+	height: '250px',
+	defaultHeight: 720,
+	defaultWidth: 1280,
 };
 
 export default function Shisha({
@@ -185,8 +185,8 @@ export default function Shisha({
 											quality={100}
 											src={img}
 											alt={alt ? alt : `Bild von ${name}`}
-											height={height ? height : 2048}
-											width={width ? width : 1365}
+											height={height ? height : 720}
+											width={width ? width : 1280}
 										/>
 									</div>
 								</Col>
