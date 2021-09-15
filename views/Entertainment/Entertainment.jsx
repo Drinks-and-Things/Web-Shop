@@ -57,8 +57,8 @@ function ProductCard({ slug, name, img, shopifyId, ...rest }) {
 						<Image
 							unoptimized={true}
 							loading='lazy'
-							height='1365'
-							width='2048'
+							height='720'
+							width='1280'
 							src={img}
 							alt={name}
 						/>
