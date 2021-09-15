@@ -15,9 +15,9 @@ import { Col } from 'react-bootstrap';
 
 const imgDefault = {
 	width: '250px',
-	height: '320px',
-	defaultHeight: 2048,
-	defaultWidth: 1536,
+	height: '180px',
+	defaultHeight: 720,
+	defaultWidth: 1280,
 };
 
 const ProductCard = ({ product, img = imgDefault, ...props }) => {
