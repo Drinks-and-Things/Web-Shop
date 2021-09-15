@@ -12,7 +12,7 @@ import { formatNumber } from '@utils';
 import styles from './Shisha.module.scss';
 
 const imgDefault = {
-	width: '180px',
+	width: '100%',
 	height: '250px',
 	defaultHeight: 720,
 	defaultWidth: 1280,
