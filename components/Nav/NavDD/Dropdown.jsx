@@ -1,29 +1,36 @@
 import Link from 'next/link';
 import React, { forwardRef } from 'react';
 import { Nav, NavLink, Dropdown as DD, Collapse } from 'react-bootstrap';
+import { useDropdownToggle } from 'react-overlays/DropdownToggle';
 import styles from '../Nav.module.scss';
 
 const CutomNavItem = forwardRef(({ children, ...props }, ref) => {
+	const [_, { toggle }] = useDropdownToggle();
+
 	return (
-		<Nav.Item {...props} as='li'>
+		<Nav.Item
+			{...props}
+			as='li'
+			onMouseLeave={(e) => {
+				toggle(false, e);
+			}}
+		>
 			{children}
 		</Nav.Item>
 	);
 });
 
-const CustomToggle = React.forwardRef(({ children, onClick, className, id, ...props }, ref) => {
+const CustomToggle = forwardRef(({ children, onClick, className, id, ...props }, ref) => {
 	return (
 		<NavLink
 			ref={ref}
 			className='toggle'
 			aria-controls={id}
 			onTouchEnd={(e) => {
-				// console.log('click');
 				e.preventDefault();
 				onClick(e);
 			}}
 			onMouseOver={(e) => {
-				// console.log('mouse');
 				e.preventDefault();
 				onClick(e);
 			}}
@@ -34,11 +41,14 @@ const CustomToggle = React.forwardRef(({ children, onClick, className, id, ...pr
 	);
 });
 
-const CustomMenu = React.forwardRef(
+/** @type {React.ForwardRefExoticComponent<React.RefAttributes<HTMLUListElement>>} */
+const CustomMenu = forwardRef(
 	(
-		{ children, style, className, 'aria-labelledby': labeledBy, show, close, id, ...props },
+		/** @type {import('react-bootstrap').DropdownProps}*/
+		{ children, 'aria-labelledby': labeledBy, show, id },
 		ref
 	) => {
+		const [_, { toggle }] = useDropdownToggle();
 		return (
 			<Collapse in={show}>
 				<ul
@@ -47,8 +57,12 @@ const CustomMenu = React.forwardRef(
 					className={`${styles.menu}`}
 					aria-labelledby={labeledBy}
 					onMouseLeave={(e) => {
-						e.preventDefault();
-						show === true && close(e);
+						e.stopPropagation();
+						try {
+							toggle(false, e);
+						} catch (error) {
+							console.error(error);
+						}
 					}}
 				>
 					{children}
