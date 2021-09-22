@@ -4,9 +4,9 @@
 
 [[redirects]]
   from = "https://drinksundthings.at"
-  to = "https://drinksundthings.wien"
+  to = "https://drinksandthings.wien"
   status = 301
-  force = false
+  force = true
   query = {path = ":path"}
 
 [[plugins]]
