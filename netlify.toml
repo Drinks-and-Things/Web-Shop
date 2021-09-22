@@ -7,7 +7,7 @@
   to = "https://drinksundthings.wien"
   status = 301
   force = false
-  query = *
+  query = {path = ":path"}
 
 [[plugins]]
     package = "@netlify/plugin-nextjs"
