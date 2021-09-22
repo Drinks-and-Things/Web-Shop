@@ -52,8 +52,9 @@ function Logo() {
 			>
 				<Image
 					src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/125x125.png?v=1617407618'
-					alt='Logo'
+					alt='Logo, Gorilla mit Goldkette und Sonnenbrille an'
 					loading='eager'
+					unoptimized={true}
 					quality={100}
 					width={125}
 					height={125}
