@@ -18,19 +18,19 @@ module.exports = withPWA({
 		],
 		https: true
 	},
-	future: {
-		webpack5: true
-	},
-	webpack: (config, { isServer }) => {
-		// Fixes npm packages that depend on `fs` module
-		if (!isServer) {
-			config.node = {
-				fs: 'empty'
-			};
-		}
+	// future: {
+	// 	webpack5: true
+	// },
+	// webpack: (config, { isServer }) => {
+	// 	// Fixes npm packages that depend on `fs` module
+	// 	if (!isServer) {
+	// 		config.node = {
+	// 			fs: 'empty'
+	// 		};
+	// 	}
 
-		return config;
-	},
+	// 	return config;
+	// },
 	async headers() {
 		return [
 			{
@@ -46,22 +46,6 @@ module.exports = withPWA({
 		];
 	}
 });
-// module.exports = {
-// 	target: 'serverless',
-// 	images: {
-// 		domains: ['cdn.shopify.com', 'images.ctfassets.net', 'i.giphy.com'],
-// 		https: true,
-// 	},
-// 	webpack: (config, { isServer }) => {
-// 		if (!isServer) {
-// 			config.node = {
-// 				fs: 'empty',
-// 			};
-// 		}
-
-// 		return config;
-// 	},
-// };
 
 // module.exports = withPWA({
 // 	target: 'serverless',
