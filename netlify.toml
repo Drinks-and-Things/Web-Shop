@@ -2,12 +2,12 @@
     command = "npm run build && npm run postbuild"
     publish = "out"
 
-[[redirects]]
-  from = "https://drinksundthings.at"
-  to = "https://drinksandthings.wien"
-  status = 301
-  force = true
-  query = {path = ":path"}
+# [[redirects]]
+#   from = "https://drinksundthings.at"
+#   to = "https://drinksandthings.wien"
+#   status = 301
+#   force = true
+#   query = {path = ":path"}
 
 [[plugins]]
     package = "@netlify/plugin-nextjs"
