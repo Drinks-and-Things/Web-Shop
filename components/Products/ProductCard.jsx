@@ -15,9 +15,9 @@ import { Col } from 'react-bootstrap';
 
 const imgDefault = {
 	width: '250px',
-	height: '180px',
+	height: '160px',
 	defaultHeight: 720,
-	defaultWidth: 1280,
+	defaultWidth: 1280
 };
 
 const ProductCard = ({ product, img = imgDefault, ...props }) => {
@@ -98,12 +98,12 @@ const ProductCard = ({ product, img = imgDefault, ...props }) => {
 				product.options === undefined
 					? {
 							variantId: product.shopifyId,
-							quantity: amount,
+							quantity: amount
 					  }
 					: {
 							variantId: product.shopifyId,
 							quantity: amount,
-							customAttributes: selectedOptions,
+							customAttributes: selectedOptions
 					  };
 
 			setAdding(true);
@@ -140,7 +140,7 @@ const ProductCard = ({ product, img = imgDefault, ...props }) => {
 		<>
 			<Card
 				style={{
-					minWidth: '270px',
+					minWidth: '270px'
 				}}
 				{...props}
 			>
@@ -153,7 +153,7 @@ const ProductCard = ({ product, img = imgDefault, ...props }) => {
 							maxWidth: img.width,
 							minHeight: img.height,
 							maxHeight: img.height,
-							justifyContent: 'center',
+							justifyContent: 'center'
 						}}
 					>
 						{product.img && (
@@ -217,7 +217,7 @@ const ProductCard = ({ product, img = imgDefault, ...props }) => {
 						<span
 							style={{
 								height: '38px',
-								margin: '20px 15px 15px 15px',
+								margin: '20px 15px 15px 15px'
 							}}
 							className='d-flex justify-content-center align-items-center h5'
 						>

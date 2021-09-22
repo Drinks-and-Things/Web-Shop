@@ -13,9 +13,9 @@ import styles from './Shisha.module.scss';
 
 const imgDefault = {
 	width: '100%',
-	height: '250px',
+	height: '230px',
 	defaultHeight: 720,
-	defaultWidth: 1280,
+	defaultWidth: 1280
 };
 
 export default function Shisha({
@@ -30,7 +30,7 @@ export default function Shisha({
 	// price: staticPrice,
 	// available: staticAvailable,
 	// quantity: staticQuantity,
-	meta,
+	meta
 }) {
 	const query = `
 	{
@@ -92,7 +92,7 @@ export default function Shisha({
 				selectedOptions !== {}
 					? Object.entries(selectedOptions).map(([key, value]) => ({
 							key,
-							value,
+							value
 					  }))
 					: [];
 
@@ -106,7 +106,7 @@ export default function Shisha({
 			await addProductToCart({
 				variantId: shopifyId,
 				quantity: amount,
-				customAttributes,
+				customAttributes
 			});
 
 			setAdding(false);
@@ -175,7 +175,7 @@ export default function Shisha({
 											maxWidth: imgDefault.width,
 											minHeight: imgDefault.height,
 											maxHeight: imgDefault.height,
-											justifyContent: 'center',
+											justifyContent: 'center'
 										}}
 									>
 										<Image
@@ -226,7 +226,7 @@ export default function Shisha({
 																	option && 'active'
 															}
 															style={{
-																margin: '.25em',
+																margin: '.25em'
 															}}
 															onClick={() =>
 																selectOption(fields.name, option)
