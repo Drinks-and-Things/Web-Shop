@@ -1,3 +1,5 @@
+[redirects]
+    https://drinksundthings.at https://drinksandthings.wien 301!
 [build]
     command = "npm run build && npm run postbuild"
     publish = "out"
