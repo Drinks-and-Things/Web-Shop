@@ -23,19 +23,24 @@ export default function Page({
 			style={{
 				position: 'relative',
 			}}
-			className='mb-5'
+			// className='mb-5'
 			{...props}
 		>
 			<img
 				src='/halloween2.jpg'
-				layout='fill'
 				style={{
 					width: '100%',
 					height: '100vh',
 					objectFit: 'cover',
-					position: 'fixed',
+					position: 'sticky',
+					top: 0,
+					left: 0,
+					right: 0,
+					bottom: 0,
+					WebkitBackfaceVisibility: 'hidden',
 				}}
 			/>
+
 			<Head
 				title={metaTitle ? metaTitle : title}
 				description={metaDescription}
@@ -43,12 +48,20 @@ export default function Page({
 				alt={metaImageAlt}
 				handle={asPath}
 			/>
-			{title && (
-				<div className='d-flex justify-content-center pt-5'>
-					<h2 className='text-center'>{title}</h2>
-				</div>
-			)}
-			{children}
+			<div
+				style={{
+					marginTop: '-100vh',
+
+					paddingBottom: '3em',
+				}}
+			>
+				{title && (
+					<div className='d-flex justify-content-center pt-5'>
+						<h2 className='text-center'>{title}</h2>
+					</div>
+				)}
+				{children}
+			</div>
 		</div>
 	);
 }

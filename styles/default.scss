@@ -24,7 +24,8 @@ body {
 .halloween {
 	color: orange;
 	h2,
-	p {
+	p,
+	span {
 		color: orange !important;
 	}
 
@@ -41,6 +42,13 @@ body {
 
 	h2 {
 		z-index: 5;
+	}
+
+	div.card,
+	.prod__amount {
+		// background-color: #2c2e30;
+		background-color: gray;
+		border: 0;
 	}
 }
 

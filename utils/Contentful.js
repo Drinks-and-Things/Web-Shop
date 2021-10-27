@@ -3,6 +3,7 @@
 import { createClient } from 'contentful';
 import { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } from './lib/const';
 import { fetchNode } from './ServerShopify';
+// import { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } from '../env';
 
 const client = createClient({
 	space: CONTENTFUL_SPACE_ID,
