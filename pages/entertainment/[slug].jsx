@@ -1,6 +1,8 @@
+/** @format */
+
 import React from 'react';
 import ProductPage from '@components/ProductPage';
-import { getProductsByCategory } from '@utils/Contentful';
+import { getProductsByCategory, getSlug } from '@utils/Contentful';
 import { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } from '@utils/lib/const';
 import { fetchNode } from '@utils';
 
@@ -25,23 +27,16 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const { createClient } = require('contentful');
-	const contentful = createClient({
-		space: CONTENTFUL_SPACE_ID,
-		accessToken: CONTENTFUL_ACCESS_TOKEN,
-	});
-
-	const entries = await contentful.getEntries({
-		'fields.slug': params.slug,
-		content_type: 'produkt',
-	});
+	const entries = await getSlug(params.slug);
 
 	// console.log(product.items[0].fields);
 
 	// const { metaDescription, metaImage, metaTitle, ...product } = products.find(
 	// 	(p) => p.slug === params.slug
 	// );
-	const { metaDescription, metaImage, metaTitle, ...product } = entries?.items[0]?.fields;
+	const { metaDescription, metaImage, metaTitle, ...product } = entries?.items
+		? entries.items[0]?.fields
+		: {};
 
 	const meta = {
 		title: metaTitle,

@@ -23,8 +23,23 @@ body {
 
 .halloween {
 	color: orange;
-	h2 {
+	h2,
+	p {
 		color: orange !important;
+	}
+
+	button.btn {
+		color: orange !important;
+		&:hover {
+			background-color: #919aa1 !important;
+		}
+	}
+
+	button.btn.active {
+		background-color: #919aa1 !important;
+	}
+
+	h2 {
 		z-index: 5;
 	}
 }

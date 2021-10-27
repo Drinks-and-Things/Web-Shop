@@ -9,6 +9,15 @@ const client = createClient({
 	accessToken: CONTENTFUL_ACCESS_TOKEN,
 });
 
+export async function getSlug(slug) {
+	const entries = await client.getEntries({
+		'fields.slug': slug,
+		content_type: 'produkt',
+	});
+
+	return entries;
+}
+
 export async function getPageData(category) {
 	let productsWithImg = [];
 	try {
