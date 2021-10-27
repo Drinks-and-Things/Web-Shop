@@ -1,3 +1,5 @@
+/** @format */
+
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { AppleSplashScreen, GTM, Icons } from '../components/Meta-Links';
 import { GTM_ID } from '@lib/const';
@@ -25,8 +27,14 @@ export default class extends Document {
 					<meta name='keywords' content='online bar' />
 					<meta name='format-detection' content='telephone=no' />
 					<meta name='apple-mobile-web-app-capable' content='yes' />
-					<meta name='apple-mobile-web-app-status-bar-style' content='default' />
-					<meta name='apple-mobile-web-app-title' content={APP_NAME} />
+					<meta
+						name='apple-mobile-web-app-status-bar-style'
+						content='default'
+					/>
+					<meta
+						name='apple-mobile-web-app-title'
+						content={APP_NAME}
+					/>
 					<meta name='format-detection' content='telephone=no' />
 					<meta name='mobile-web-app-capable' content='yes' />
 					<meta name='theme-color' content='#000' />
@@ -46,7 +54,7 @@ export default class extends Document {
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					{/* <GoogleAnalytics /> */}
 				</Head>
-				<body className='preload'>
+				<body className='preload halloween'>
 					<script> </script>
 					{/* Google Tag Manager (noscript) */}
 					{isProduction && (

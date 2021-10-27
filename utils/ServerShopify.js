@@ -1,23 +1,21 @@
+/** @format */
+
 import { SHOPIFY_ACCESS_TOKEN, SHOPIFY_DOMAIN } from './lib/const';
-
-// import { OLD_SHOPIFY_ACCESS_TOKEN, OLD_SHOPIFY_DOMAIN } from './lib/const';
-
-// import { GraphQLClient, gql } from 'graphql-request';
-// const client = new GraphQLClient(`https://${OLD_SHOPIFY_DOMAIN}/api/2020-07/graphql.json`, {
-// 	headers: { 'X-Shopify-Storefront-Access-Token': OLD_SHOPIFY_ACCESS_TOKEN, mode: 'cors' },
-// });
 
 export async function fetchFromShopify(query, variables) {
 	try {
-		const data = await fetch(`https://${SHOPIFY_DOMAIN}/api/2020-07/graphql.json`, {
-			method: 'POST',
-			mode: 'cors',
-			headers: {
-				'X-Shopify-Storefront-Access-Token': SHOPIFY_ACCESS_TOKEN,
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ query, variables }),
-		});
+		const data = await fetch(
+			`https://${SHOPIFY_DOMAIN}/api/2020-07/graphql.json`,
+			{
+				method: 'POST',
+				mode: 'cors',
+				headers: {
+					'X-Shopify-Storefront-Access-Token': SHOPIFY_ACCESS_TOKEN,
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ query, variables }),
+			}
+		);
 		// console.log(await data.json());
 		return (await data.json()).data;
 		// const data = await client.request(query, variables);
@@ -61,5 +59,5 @@ export async function fetchNode(id) {
 		`
 	);
 
-	return data.node || {};
+	return data?.node || {};
 }

@@ -1,6 +1,9 @@
+/** @format */
+
 import React from 'react';
 import { useRouter } from 'next/router';
 import Head from '@components/Head';
+import Image from 'next/image';
 
 export default function Page({
 	metaTitle,
@@ -16,7 +19,23 @@ export default function Page({
 
 	// console.log(asPath);
 	return (
-		<div className='mb-5' {...props}>
+		<div
+			style={{
+				position: 'relative',
+			}}
+			className='mb-5'
+			{...props}
+		>
+			<img
+				src='/halloween2.jpg'
+				layout='fill'
+				style={{
+					width: '100%',
+					height: '100vh',
+					objectFit: 'cover',
+					position: 'fixed',
+				}}
+			/>
 			<Head
 				title={metaTitle ? metaTitle : title}
 				description={metaDescription}
@@ -25,7 +44,7 @@ export default function Page({
 				handle={asPath}
 			/>
 			{title && (
-				<div className='d-flex justify-content-center mt-5'>
+				<div className='d-flex justify-content-center pt-5'>
 					<h2 className='text-center'>{title}</h2>
 				</div>
 			)}

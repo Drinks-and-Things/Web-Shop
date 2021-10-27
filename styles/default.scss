@@ -1,3 +1,5 @@
+/** @format */
+
 @import 'variables';
 @import '~bootstrap/scss/bootstrap';
 @import '~bootswatch/dist/lux/bootswatch';
@@ -17,6 +19,14 @@ body {
 	min-width: 100%;
 	margin: 0;
 	padding: 0;
+}
+
+.halloween {
+	color: orange;
+	h2 {
+		color: orange !important;
+		z-index: 5;
+	}
 }
 
 body.drawer-open {
@@ -259,13 +269,16 @@ nav {
 //Animations
 
 .puff-in-center {
-	-webkit-animation: puff-in-center 0.35s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+	-webkit-animation: puff-in-center 0.35s cubic-bezier(0.47, 0, 0.745, 0.715)
+		both;
 	animation: puff-in-center 0.35s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }
 
 .slide-in-elliptic-top-fwd {
-	-webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-webkit-animation: slide-in-elliptic-top-fwd 0.7s
+		cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	animation: slide-in-elliptic-top-fwd 0.7s
+		cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .swirl-in-fwd {
@@ -274,23 +287,30 @@ nav {
 }
 
 .slide-in-bck-center {
-	-webkit-animation: slide-in-bck-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-	animation: slide-in-bck-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	-webkit-animation: slide-in-bck-center 0.7s
+		cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: slide-in-bck-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+		both;
 }
 
 .tracking-in-expand {
-	-webkit-animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+	-webkit-animation: tracking-in-expand 0.8s
+		cubic-bezier(0.215, 0.61, 0.355, 1) both;
 	animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
 .pop-in {
-	-webkit-animation: 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running pop-in;
-	animation: 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running pop-in;
+	-webkit-animation: 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards
+		running pop-in;
+	animation: 1s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running
+		pop-in;
 }
 
 .pop-in-slow {
-	-webkit-animation: 2s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running pop-in;
-	animation: 2s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running pop-in;
+	-webkit-animation: 2s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards
+		running pop-in;
+	animation: 2s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running
+		pop-in;
 }
 
 .scale-hover-1_1 {

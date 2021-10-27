@@ -30,7 +30,7 @@
 		"@fortawesome/react-fontawesome": "^0.1.14",
 		"bootstrap": "^4.6.0",
 		"bootswatch": "^4.6.0",
-		"contentful": "^9.0.0",
+		"contentful": "^9.1.4",
 		"dayjs": "^1.10.4",
 		"graphql-request": "^3.4.0",
 		"http-errors": "^1.7.3",

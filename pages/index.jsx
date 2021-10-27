@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import Homepage from '../views/Homepage';
 import InstallPrompt from '@components/InstallPrompt/IOS';
@@ -18,7 +20,7 @@ const Home = ({ preview, products, home }) => {
 		<>
 			{prompt && <InstallPrompt />}
 			{/* {!isStandalone && <OpeningHoursPopUp />} */}
-			<NewOpeningPopUp />
+			{/* <NewOpeningPopUp /> */}
 
 			<Homepage
 				{...home}
@@ -31,28 +33,31 @@ const Home = ({ preview, products, home }) => {
 
 export async function getStaticProps({ preview = false }) {
 	let productCarousel = [];
-	const HomepageData = await getHomepage();
-	for (let i = 0; i < HomepageData.productCarousel.length; i++) {
-		const { image } = (await fetchNode(HomepageData.productCarousel[i].fields.shopifyId)) || {};
+	const HomepageData = (await getHomepage()) || {};
+	for (let i = 0; i < HomepageData?.productCarousel?.length || 0; i++) {
+		const { image } =
+			(await fetchNode(
+				HomepageData?.productCarousel[i].fields.shopifyId
+			)) || {};
 		productCarousel.push({
-			...HomepageData.productCarousel[i].fields,
+			...HomepageData?.productCarousel[i].fields,
 			img: image && image.src,
-			alt: image && image.alt
+			alt: image && image.alt,
 		});
 	}
 
-	// console.log(HomepageData.productCarousel[1].fields.options);
+	// console.log(HomepageData?.productCarousel[1].fields.options);
 	// console.log(productCarousel);
 
 	const props = {
 		preview,
 		home: {
-			meta: HomepageData.metaData.fields,
-			cta: HomepageData.callToAction,
+			meta: HomepageData?.metaData?.fields,
+			cta: HomepageData?.callToAction,
 			products: productCarousel,
-			bgImage: HomepageData.bgImage.fields.file.url,
-			alt: HomepageData.bgImage.fields.title
-		}
+			bgImage: HomepageData?.bgImage?.fields.file.url,
+			alt: HomepageData?.bgImage?.fields.title,
+		},
 	};
 
 	// const products = await getProducts();
@@ -62,7 +67,7 @@ export async function getStaticProps({ preview = false }) {
 		// 	products,
 		// 	preview,
 		// },
-		props: JSON.parse(JSON.stringify(props))
+		props: JSON.parse(JSON.stringify(props)),
 	};
 }
 
