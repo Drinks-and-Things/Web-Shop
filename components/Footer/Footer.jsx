@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import Image from 'next/image';
 import { Col, Container, Row } from 'react-bootstrap';
@@ -14,7 +16,7 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 	return (
 		<footer
 			style={{
-				position: 'relative'
+				position: 'relative',
 			}}
 		>
 			<Image
@@ -38,14 +40,20 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 										aria-label='Facebook'
 										href='https://www.facebook.com/drinks.and.thingss'
 									>
-										<FontAwesomeIcon icon={faFacebook} size='3x' />
+										<FontAwesomeIcon
+											icon={faFacebook}
+											size='3x'
+										/>
 										{/* <FacebookIcon width='24px' /> */}
 									</a>
 									<a
 										aria-label='Instagram'
 										href='https://www.instagram.com/drinks._n._things/'
 									>
-										<FontAwesomeIcon icon={faInstagram} size='3x' />
+										<FontAwesomeIcon
+											icon={faInstagram}
+											size='3x'
+										/>
 									</a>
 								</Row>
 							</Col>
@@ -54,7 +62,10 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 							</Col>
 							<Col lg={4} md={6} className='mb-4 mb-lg-0'>
 								<Header>Öffnungszeiten</Header>
-								<ul className='list-unstyled mb-0' itemProp='openingHours'>
+								<ul
+									className='list-unstyled mb-0'
+									itemProp='openingHours'
+								>
 									<Text>Mo-Do: 20:00-02:00</Text>
 									<Text>Fr und Sa: 20:00-04:00</Text>
 									<Text>So: 20:00-02:00</Text>
@@ -66,7 +77,10 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 				</div>
 			</section>
 			<div className={`${styles.credit} bg-primary p-2 text-center`}>
-				<a className='text-muted' href='https://github.com/abdo643-HULK'>
+				<a
+					className='text-muted'
+					href='https://github.com/abdo643-HULK'
+				>
 					Konzept & Design by{' '}
 					<span>
 						<GithubIcon width='13px' />
@@ -83,7 +97,7 @@ function Logo() {
 		<div
 			style={{
 				display: 'flex',
-				justifyContent: 'center'
+				justifyContent: 'center',
 			}}
 		>
 			<div
@@ -91,13 +105,13 @@ function Logo() {
 					minWidth: '150px',
 					minHeight: '150px',
 					maxWidth: '150px',
-					maxHeight: '150px'
+					maxHeight: '150px',
 				}}
 			>
 				<Image
 					src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/194x194.png?v=1617444693'
 					alt='Logo unseres Shops'
-					loading='eager'
+					unoptimized={true}
 					quality={100}
 					width={194}
 					height={194}

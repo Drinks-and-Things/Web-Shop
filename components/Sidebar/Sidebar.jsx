@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { forwardRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,7 +13,9 @@ const Sidebar = forwardRef(({ children, opened, close, ...props }, ref) => {
 		<aside
 			ref={ref}
 			tabIndex={opened === true ? '-1' : ''}
-			className={`${styles.sidebar} ${opened === true ? styles.opened : styles.closed}`}
+			className={`${styles.sidebar} ${
+				opened === true ? styles.opened : styles.closed
+			}`}
 			{...props}
 		>
 			<nav role='navigation'>
@@ -58,6 +62,7 @@ function Logo() {
 					src='https://cdn.shopify.com/s/files/1/0558/2739/8864/files/125x125.png?v=1617407618'
 					alt='Logo'
 					loading='eager'
+					unoptimized={true}
 					quality={100}
 					width={125}
 					height={125}
