@@ -26,7 +26,7 @@ export default function Page({
 			// className='mb-5'
 			{...props}
 		>
-			<img
+			{/* <img
 				src='/halloween2.jpg'
 				style={{
 					width: '100%',
@@ -39,7 +39,7 @@ export default function Page({
 					bottom: 0,
 					WebkitBackfaceVisibility: 'hidden',
 				}}
-			/>
+			/> */}
 
 			<Head
 				title={metaTitle ? metaTitle : title}

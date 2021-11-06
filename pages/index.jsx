@@ -22,11 +22,7 @@ const Home = ({ preview, products, home }) => {
 			{/* {!isStandalone && <OpeningHoursPopUp />} */}
 			{/* <NewOpeningPopUp /> */}
 
-			<Homepage
-				{...home}
-				// products={products}
-				// bgImage='/vienna_50.jpg'
-			/>
+			<Homepage {...home} />
 		</>
 	);
 };
@@ -36,9 +32,7 @@ export async function getStaticProps({ preview = false }) {
 	const HomepageData = (await getHomepage()) || {};
 	for (let i = 0; i < HomepageData?.productCarousel?.length || 0; i++) {
 		const { image } =
-			(await fetchNode(
-				HomepageData?.productCarousel[i].fields.shopifyId
-			)) || {};
+			(await fetchNode(HomepageData?.productCarousel[i].fields.shopifyId)) || {};
 		productCarousel.push({
 			...HomepageData?.productCarousel[i].fields,
 			img: image && image.src,

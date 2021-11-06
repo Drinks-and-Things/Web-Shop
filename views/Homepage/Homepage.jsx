@@ -37,13 +37,7 @@ const responsive = {
 	},
 };
 
-export default function Homepage({
-	products,
-	bgImage: img,
-	meta,
-	cta = CTA,
-	alt = '',
-}) {
+export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt = '' }) {
 	return (
 		<Page
 			metaTitle={meta?.title ? meta.title : 'Startseite'}
@@ -52,7 +46,7 @@ export default function Homepage({
 			metaImageAlt={meta?.image?.fields?.title}
 		>
 			<section className={styles.landing__container}>
-				{/* <Image
+				<Image
 					unoptimized={true}
 					className={`${styles.landing__image}`}
 					loading='eager'
@@ -63,7 +57,7 @@ export default function Homepage({
 					layout='fill'
 					objectFit='cover'
 					objectPosition='center'
-				/> */}
+				/>
 				<div className={styles.landing__container}>
 					<div className={styles.cta__container}>
 						{cta?.map((text, i) => (
