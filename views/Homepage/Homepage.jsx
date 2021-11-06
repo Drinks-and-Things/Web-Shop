@@ -71,11 +71,6 @@ export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt 
 				</div>
 			</section>
 			<section className={`${styles.container}`}>
-				{/* <div>
-					<div className='text-center mt-5'>
-						<h2>Startseite</h2>
-					</div>
-				</div> */}
 				{products && products.length > 0 && (
 					<div className={styles.root}>
 						<Carousel
