@@ -21,7 +21,7 @@ export default function Page({
 	return (
 		<div
 			style={{
-				position: 'relative',
+				position: 'relative'
 			}}
 			// className='mb-5'
 			{...props}
@@ -50,9 +50,8 @@ export default function Page({
 			/>
 			<div
 				style={{
-					marginTop: '-100vh',
-
-					paddingBottom: '3em',
+					// marginTop: '-100vh',
+					paddingBottom: '3em'
 				}}
 			>
 				{title && (
