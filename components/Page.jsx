@@ -40,6 +40,38 @@ export default function Page({
 					WebkitBackfaceVisibility: 'hidden',
 				}}
 			/> */}
+			<picture>
+				<source srcset='xmas.webp' type='image/webp' />
+				<img
+					src='/xmas.jpg'
+					alt='logo'
+					style={{
+						width: '100%',
+						height: '100vh',
+						objectFit: 'cover',
+						position: 'sticky',
+						top: 0,
+						left: 0,
+						right: 0,
+						bottom: 0,
+						WebkitBackfaceVisibility: 'hidden'
+					}}
+				/>
+			</picture>
+			{/* <img
+				src='/halloween2.jpg'
+				style={{
+					width: '100%',
+					height: '100vh',
+					objectFit: 'cover',
+					position: 'sticky',
+					top: 0,
+					left: 0,
+					right: 0,
+					bottom: 0,
+					WebkitBackfaceVisibility: 'hidden',
+				}}
+			/> */}
 
 			<Head
 				title={metaTitle ? metaTitle : title}
@@ -50,7 +82,7 @@ export default function Page({
 			/>
 			<div
 				style={{
-					// marginTop: '-100vh',
+					marginTop: '-100vh',
 					paddingBottom: '3em'
 				}}
 			>

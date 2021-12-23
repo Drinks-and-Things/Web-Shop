@@ -12,29 +12,29 @@ const CTA = ['Usere einzige Maßnahme', 'DICH zufrieden zu stellen &#128074;'];
 const responsive = {
 	desktop: {
 		breakpoint: { max: 3000, min: 1200 },
-		items: 4,
+		items: 4
 	},
 	laptops: {
 		breakpoint: { max: 1200, min: 992 },
-		items: 3,
+		items: 3
 	},
 	tablet: {
 		breakpoint: { max: 992, min: 765 },
 		items: 2,
-		swipeable: true,
+		swipeable: true
 	},
 	mobile_tablet: {
 		breakpoint: { max: 765, min: 576 },
 		items: 1,
 		partialVisibilityGutter: 200,
-		swipeable: true,
+		swipeable: true
 	},
 	mobile: {
 		breakpoint: { max: 576, min: 0 },
 		items: 1,
 		partialVisibilityGutter: 50,
-		swipeable: true,
-	},
+		swipeable: true
+	}
 };
 
 export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt = '' }) {
@@ -46,7 +46,7 @@ export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt 
 			metaImageAlt={meta?.image?.fields?.title}
 		>
 			<section className={styles.landing__container}>
-				<Image
+				{/* <Image
 					unoptimized={true}
 					className={`${styles.landing__image}`}
 					loading='eager'
@@ -57,7 +57,7 @@ export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt 
 					layout='fill'
 					objectFit='cover'
 					objectPosition='center'
-				/>
+				/> */}
 				<div className={styles.landing__container}>
 					<div className={styles.cta__container}>
 						{cta?.map((text, i) => (

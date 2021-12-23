@@ -48,8 +48,24 @@ export default class extends Document {
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					{/* <GoogleAnalytics /> */}
 				</Head>
-				<body className='preload'>
-					<script> </script>
+				<body className='preload christmas'>
+					<div class='snowflakes' aria-hidden='true'>
+						<div class='snowflake'>❅</div>
+						<div class='snowflake'>❆</div>
+						<div class='snowflake'>❅</div>
+						<div class='snowflake'>❆</div>
+						<div class='snowflake'>❅</div>
+						<div class='snowflake'>❆</div>
+						<div class='snowflake'>❅</div>
+						<div class='snowflake'>❆</div>
+						<div class='snowflake'>❅</div>
+						<div class='snowflake'>❆</div>
+						<div class='snowflake'>❅</div>
+						<div class='snowflake'>❆</div>
+						<div class='snowflake'>❆</div>
+						<div class='snowflake'>❅</div>
+						<div class='snowflake'>❆</div>
+					</div>
 					{/* Google Tag Manager (noscript) */}
 					{isProduction && (
 						<noscript

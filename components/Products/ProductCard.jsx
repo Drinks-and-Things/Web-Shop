@@ -140,7 +140,8 @@ const ProductCard = ({ product, img = imgDefault, ...props }) => {
 		<>
 			<Card
 				style={{
-					minWidth: '270px'
+					minWidth: '270px',
+					zIndex: 2
 				}}
 				{...props}
 			>
