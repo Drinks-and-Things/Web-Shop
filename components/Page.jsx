@@ -26,22 +26,8 @@ export default function Page({
 			// className='mb-5'
 			{...props}
 		>
-			{/* <img
-				src='/halloween2.jpg'
-				style={{
-					width: '100%',
-					height: '100vh',
-					objectFit: 'cover',
-					position: 'sticky',
-					top: 0,
-					left: 0,
-					right: 0,
-					bottom: 0,
-					WebkitBackfaceVisibility: 'hidden',
-				}}
-			/> */}
-			<picture>
-				<source srcset='xmas.webp' type='image/webp' />
+			{/* <picture>
+				<source srcSet='xmas.webp' type='image/webp' />
 				<img
 					src='/xmas.jpg'
 					alt='logo'
@@ -57,7 +43,7 @@ export default function Page({
 						WebkitBackfaceVisibility: 'hidden'
 					}}
 				/>
-			</picture>
+			</picture> */}
 			{/* <img
 				src='/halloween2.jpg'
 				style={{
@@ -82,7 +68,7 @@ export default function Page({
 			/>
 			<div
 				style={{
-					marginTop: '-100vh',
+					// marginTop: '-100vh',
 					paddingBottom: '3em'
 				}}
 			>

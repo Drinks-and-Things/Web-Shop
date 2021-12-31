@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ProductCard } from '@components/Products';
 import Page from '@components/Page';
 import styles from './Homepage.module.scss';
+import NewYear from '@components/New-Year/New-Year';
 
 const CTA = ['Usere einzige Maßnahme', 'DICH zufrieden zu stellen &#128074;'];
 
@@ -46,7 +47,7 @@ export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt 
 			metaImageAlt={meta?.image?.fields?.title}
 		>
 			<section className={styles.landing__container}>
-				{/* <Image
+				<Image
 					unoptimized={true}
 					className={`${styles.landing__image}`}
 					loading='eager'
@@ -57,7 +58,8 @@ export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt 
 					layout='fill'
 					objectFit='cover'
 					objectPosition='center'
-				/> */}
+				/>
+				<NewYear bg={img} />
 				<div className={styles.landing__container}>
 					<div className={styles.cta__container}>
 						{cta?.map((text, i) => (

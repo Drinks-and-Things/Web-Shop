@@ -48,24 +48,24 @@ export default class extends Document {
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					{/* <GoogleAnalytics /> */}
 				</Head>
-				<body className='preload christmas'>
-					<div class='snowflakes' aria-hidden='true'>
-						<div class='snowflake'>❅</div>
-						<div class='snowflake'>❆</div>
-						<div class='snowflake'>❅</div>
-						<div class='snowflake'>❆</div>
-						<div class='snowflake'>❅</div>
-						<div class='snowflake'>❆</div>
-						<div class='snowflake'>❅</div>
-						<div class='snowflake'>❆</div>
-						<div class='snowflake'>❅</div>
-						<div class='snowflake'>❆</div>
-						<div class='snowflake'>❅</div>
-						<div class='snowflake'>❆</div>
-						<div class='snowflake'>❆</div>
-						<div class='snowflake'>❅</div>
-						<div class='snowflake'>❆</div>
-					</div>
+				<body className='preload'>
+					{/* <div class='snowflakes' aria-hidden='true'>
+						<div className='snowflake'>❅</div>
+						<div className='snowflake'>❆</div>
+						<div className='snowflake'>❅</div>
+						<div className='snowflake'>❆</div>
+						<div className='snowflake'>❅</div>
+						<div className='snowflake'>❆</div>
+						<div className='snowflake'>❅</div>
+						<div className='snowflake'>❆</div>
+						<div className='snowflake'>❅</div>
+						<div className='snowflake'>❆</div>
+						<div className='snowflake'>❅</div>
+						<div className='snowflake'>❆</div>
+						<div className='snowflake'>❆</div>
+						<div className='snowflake'>❅</div>
+						<div className='snowflake'>❆</div>
+					</div> */}
 					{/* Google Tag Manager (noscript) */}
 					{isProduction && (
 						<noscript

@@ -1,5 +1,3 @@
-/** @format */
-
 import React from 'react';
 import Homepage from '../views/Homepage';
 import InstallPrompt from '@components/InstallPrompt/IOS';
@@ -36,7 +34,7 @@ export async function getStaticProps({ preview = false }) {
 		productCarousel.push({
 			...HomepageData?.productCarousel[i].fields,
 			img: image && image.src,
-			alt: image && image.alt,
+			alt: image && image.alt
 		});
 	}
 
@@ -50,8 +48,8 @@ export async function getStaticProps({ preview = false }) {
 			cta: HomepageData?.callToAction,
 			products: productCarousel,
 			bgImage: HomepageData?.bgImage?.fields.file.url,
-			alt: HomepageData?.bgImage?.fields.title,
-		},
+			alt: HomepageData?.bgImage?.fields.title
+		}
 	};
 
 	// const products = await getProducts();
@@ -61,7 +59,7 @@ export async function getStaticProps({ preview = false }) {
 		// 	products,
 		// 	preview,
 		// },
-		props: JSON.parse(JSON.stringify(props)),
+		props: JSON.parse(JSON.stringify(props))
 	};
 }
 
