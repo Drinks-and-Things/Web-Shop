@@ -8,7 +8,8 @@ import Page from '@components/Page';
 import styles from './Homepage.module.scss';
 import NewYear from '@components/New-Year/New-Year';
 
-const CTA = ['Usere einzige Maßnahme', 'DICH zufrieden zu stellen &#128074;'];
+// const CTA = ['Usere einzige Maßnahme', 'DICH zufrieden zu stellen &#128074;'];
+const CTA = [];
 
 const responsive = {
 	desktop: {
