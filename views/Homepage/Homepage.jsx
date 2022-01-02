@@ -60,7 +60,7 @@ export default function Homepage({ products, bgImage: img, meta, cta = CTA, alt 
 					objectFit='cover'
 					objectPosition='center'
 				/>
-				<NewYear bg={img} />
+				{/* <NewYear bg={img} /> */}
 				<div className={styles.landing__container}>
 					<div className={styles.cta__container}>
 						{cta?.map((text, i) => (
