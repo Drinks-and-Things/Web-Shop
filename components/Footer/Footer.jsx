@@ -66,9 +66,9 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 									className='list-unstyled mb-0'
 									itemProp='openingHours'
 								>
-									<Text>Mo-Do: 20:00-02:00</Text>
-									<Text>Fr und Sa: 20:00-04:00</Text>
-									<Text>So: 20:00-02:00</Text>
+									<Text>Mo-Do: 18:00-02:00</Text>
+									<Text>Fr und Sa: 18:00-04:00</Text>
+									<Text>So: 16:00-02:00</Text>
 								</ul>
 							</Col>
 						</Row>
