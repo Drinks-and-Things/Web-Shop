@@ -37,6 +37,7 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 								<Logo width={150} height={150} />
 								<Row className={styles.social}>
 									<a
+										rel='external'
 										aria-label='Facebook'
 										href='https://www.facebook.com/drinks.and.thingss'
 									>
@@ -47,8 +48,9 @@ const Footer = ({ alt = 'Logo unseres Shops' }) => {
 										{/* <FacebookIcon width='24px' /> */}
 									</a>
 									<a
+										rel='external'
 										aria-label='Instagram'
-										href='https://www.instagram.com/drinks._n._things/'
+										href='https://www.instagram.com/drinks.n.things_official'
 									>
 										<FontAwesomeIcon
 											icon={faInstagram}
